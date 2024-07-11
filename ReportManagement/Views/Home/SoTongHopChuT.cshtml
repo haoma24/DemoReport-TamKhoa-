@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "SoTongHopChuT";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
+}
+@using (Html.BeginForm("BaoCaoSoTongHopChuT", "Home", FormMethod.Post))
+{
+    <div class="card mb-4 m-2">
+        <div class="card-header">
+            <div class="d-flex align-content-center w-100">
+                <span class="fs-3 fw-bold">SỔ TỔNG HỢP CHỮ T CỦA MỘT TÀI KHOẢN: TK @ViewBag.taiKhoanUd</span>
+                <a href="@Url.Action("NgayBaoCaoSoQuy", "Home", new {name = "SoTongHopChuT"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+            </div>
+            <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
+            <input id="@ViewBag.fromDate" type="text" hidden name="fromDate" value="@ViewBag.fromDate" />
+            <input id="@ViewBag.toDate" type="text" hidden name="toDate" value="@ViewBag.toDate" />
+            <input id="taikhoaid" type="text" hidden name="taikhoanid" value="@ViewBag.taikhoanid" />
+        </div>
+        <div class="card-body">
+            <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
+        </div>
+        <div class="card-body table-responsive">
+            <table id="resizeMe" class="table table-hover table-bordered">
+                <thead class="bg-info">
+                    <tr id="header-row">
+                        <th>Tk</th>
+                        <th>Tên tài khoản</th>
+                        <th>Ps nợ</th>
+                        <th>Ps có</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (System.Data.DataRow row in dt.Rows)
+                    {
+                        <tr>
+                            @if (row["Nhom"].ToString() != "4")
+                            {
+                                if (double.Parse(row["Psno"].ToString()) == 0)
+                                {
+                                    <td class="e-ellipsis-100">@row["TkDu_ud"]</td>
+                                    <td class="e-ellipsis-100 fw-bold">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100"></td>
+                                    <td class="e-ellipsis-100 fw-bold">@string.Format("{0:N0}", row["Psco"],"vi-VN")</td>
+                                }
+                                else if (double.Parse(row["Psco"].ToString()) == 0)
+                                {
+                                    <td class="e-ellipsis-100">@row["TkDu_ud"]</td>
+                                    <td class="e-ellipsis-100 fw-bold">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100">@string.Format("{0:N0}", row["Psno"], "vi-VN")</td>
+                                    <td class="e-ellipsis-100 fw-bold"></td>
+                                }
+                                else
+                                {
+                                    <td class="e-ellipsis-100"></td>
+                                    <td class="e-ellipsis-100 fw-bold">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100 fw-bold">@string.Format("{0:N0}", row["Psno"], "vi-VN")</td>
+                                    <td class="e-ellipsis-100 fw-bold">@string.Format("{0:N0}", row["Psco"], "vi-VN")</td>
+                                }
+
+                            }
+                            else
+                            {
+                                if (double.Parse(row["Psco"].ToString()) == 0)
+                                {
+                                    <td class="e-ellipsis-100">@row["TkDu_ud"]</td>
+                                    <td class="e-ellipsis-100">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100">@string.Format("{0:N0}", row["Psno"], "vi-VN")</td>
+                                    <td class="e-ellipsis-100"></td>
+                                }
+                                else if (double.Parse(row["Psno"].ToString()) == 0)
+                                {
+                                    <td class="e-ellipsis-100">@row["TkDu_ud"]</td>
+                                    <td class="e-ellipsis-100">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100"></td>
+                                    <td class="e-ellipsis-100">@string.Format("{0:N0}", row["Psco"], "vi-VN")</td>
+                                }
+                                else
+                                {
+                                    <td class="e-ellipsis-100">@row["TkDu_ud"]</td>
+                                    <td class="e-ellipsis-100">@row["TkDu_nm"]</td>
+                                    <td class="e-ellipsis-100">@string.Format("{0:N0}", row["Psno"], "vi-VN")</td>
+                                    <td class="e-ellipsis-100">@string.Format("{0:N0}", row["Psco"], "vi-VN")</td>
+                                }
+                            }
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+}
+

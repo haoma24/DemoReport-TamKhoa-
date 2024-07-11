@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PhieuChi>
+@{
+    ViewBag.Title = "PhieuChiTienMat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("BaoCaoPhieuChi", "Home", FormMethod.Post))
+{
+    <div class="card mb-4 m-2">
+        <div class="card-header">
+            <div class="d-flex align-content-center w-100">
+                <span class="fs-3 fw-bold">PHIẾU CHI TIỀN MẶT</span>
+                <a href="@Url.Action("NgayBaoCao", "Home", new {name = "PhieuChiTienMat"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+            </div>
+            <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
+        </div>
+        <div class="card-body">
+            <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
+        </div>
+        <div class="card-body table-responsive">
+            <table id="resizeMe" class="table table-hover table-bordered">
+                <thead class="bg-info">
+                    <tr id="header-row">
+                        <th class="text-nowrap text-center" data-column="0">@Html.CheckBox("ID")</th>
+                        <th class="text-nowrap" data-column="1">Ngày chứng từ</th>
+                        <th class="text-nowrap" data-column="2">Số chứng từ</th>
+                        <th class="text-nowrap" data-column="3">Diễn giải</th>
+                        <th class="text-nowrap" data-column="4">Mã khách</th>
+                        <th class="text-nowrap" data-column="5">Tài khoản nợ</th>
+                        <th class="text-nowrap" data-column="6">Tổng phát sinh</th>
+                        <th class="text-nowrap" data-column="7">Mã ngoại tệ</th>
+                        <th class="text-nowrap" data-column="8">Tỷ giá</th>
+                        <th class="text-nowrap" data-column="9">Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pc in Model)
+                    {
+                        <tr>
+                            <td class="text-center"><input id="@pc.Id" type="checkbox" name="list" value="@pc.Id" /></td>
+                            <td class="e-ellipsis-100">@Convert.ToDateTime(pc.NgayLap).ToString("dd/MM/yyyy")</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.SoPhieu)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.DienGiai)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.KhachHangId)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.GhiNoTkId)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.TongTienVND)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.NgoaiTeId)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.TyGia)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => pc.ChungTu)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+}

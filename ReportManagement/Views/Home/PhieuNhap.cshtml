@@ -1,0 +1,96 @@
+﻿@model IEnumerable<PhieuNhap>
+@{
+    ViewBag.Title = "PhieuNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("BaoCaoPhieuNhap", "Home", FormMethod.Post))
+{
+    <div class="card mb-4 m-2">
+        <div class="card-header">
+            <div class="d-flex align-content-center w-100">
+                <span class="fs-3 fw-bold">PHIẾU NHẬP</span>
+                <a href="@Url.Action("NgayBaoCao", "Home", new {name = "PhieuNhap"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+            </div>
+            <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
+        </div>
+        <div class="card-body">
+            <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
+        </div>
+        <div class="card-body overflow-scroll">
+            <table id="resizeMe" class="table table-hover resizable-table" >
+                <thead class="bg-info">
+                    <tr id="header-row">
+                        <th class="text-nowrap">@Html.CheckBox("ID")</th>
+                        <th class="text-nowrap">Ngày chứng từ</th>
+                        <th class="text-nowrap">Số chứng từ</th>
+                        <th class="text-nowrap">Số hóa đơn</th>
+                        <th class="text-nowrap">Ngày hóa đơn</th>
+                        <th class="text-nowrap">Diễn giải</th>
+                        <th class="text-nowrap">Mã khách</th>
+                        <th class="text-nowrap">Tên khách</th>
+                        <th class="text-nowrap">Mã nhập xuất</th>
+                        <th class="text-nowrap">Số lượng</th>
+                        <th class="text-nowrap">Tên hàng</th>
+                        <th class="text-nowrap">Chi phí</th>
+                        <th class="text-nowrap">Tiền thuế</th>
+                        <th class="text-nowrap">Tổng tiền</th>
+                        <th class="text-nowrap">Mã ngoại tệ</th>
+                        <th class="text-nowrap">Tỷ giá</th>
+                        <th class="text-nowrap">Tiền hàng ngoại tệ</th>
+                        <th class="text-nowrap">Chi phí ngoại tệ</th>
+                        <th class="text-nowrap">Tiền thuế ngoại tệ</th>
+                        <th class="text-nowrap">Tổng tiền ngoại tệ</th>
+                        <th class="text-nowrap">Hạn thanh toán</th>
+                        <th class="text-nowrap">Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pn in Model)
+                    {
+                        <tr>
+                            <td><input id="@pn.Id" type="checkbox" name="list" value="@pn.Id" /></td>
+                            <td>@Convert.ToDateTime(pn.NgayLap).ToString("dd/MM/yyyy")</td>
+                            <td>@Html.DisplayFor(Model => pn.Sopn)</td>
+                            <td>@Html.DisplayFor(Model => pn.SoHd)</td>
+                            <td>@Convert.ToDateTime(pn.NgayHd).ToString("dd/MM/yyyy")</td>
+                            <td>@Html.DisplayFor(Model => pn.DienGiai)</td>
+                            <td>@Html.DisplayFor(Model => pn.KhachHang.KhachHangUd)</td>
+                            <td>@Html.DisplayFor(Model => pn.KhachHang.KhachHangNm)</td>
+                            <td>@Html.DisplayFor(Model => pn.TaiKhoan.TaiKhoanUd)</td>
+                            <td>@Html.DisplayFor(Model => pn.SoLuong)</td>
+                            <td>@Html.DisplayFor(Model => pn.TienHangVND)</td>
+                            <td>@Html.DisplayFor(Model => pn.ChiPhiVND)</td>
+                            <td>@Html.DisplayFor(Model => pn.ThueNkVND)</td>
+                            <td>@Html.DisplayFor(Model => pn.TongTienVND)</td>
+                            <td>@Html.DisplayFor(Model => pn.NgoaiTeId)</td>
+                            <td>@Html.DisplayFor(Model => pn.NgoaiTeId)</td>
+                            <td>@Html.DisplayFor(Model => pn.TienHang)</td>
+                            <td>@Html.DisplayFor(Model => pn.ChiPhi)</td>
+                            <td>@Html.DisplayFor(Model => pn.TongTien)</td>
+                            <td>@Html.DisplayFor(Model => pn.HanTT)</td>
+                            <td>@Html.DisplayFor(Model => pn.ThueNk)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+}

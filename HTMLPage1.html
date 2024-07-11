@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+
+<body>
+    <h1>PHIẾU XUẤT NỘI BỘ</h1>
+    <asp:DropDownList runat="server"></asp:DropDownList>
+    <label for="idInput">Nhập số Id:</label>
+    <input type="text" id="idInput" placeholder="Nhập số Id">
+    <button onclick="updateImageSource()">Xem báo cáo</button>
+    <br />
+    <hr />
+    <div id="image-container">
+        <iframe style="width:100%; height:100%; position:absolute;" id="dynamicImage" src="" alt="Hình ảnh sẽ được cập nhật ở đây"></iframe>
+    </div>
+
+    <script>
+        function updateImageSource() {
+            // Lấy giá trị nhập từ input
+            const id = document.getElementById('idInput').value;
+            // Xây dựng URL cho ảnh
+            const imageUrl = `http://localhost/ReportServer/Pages/ReportViewer.aspx?%2fDemoReport%2fPhieuXuatNoiBo&PhieuXuatKhoId=` + id + `&rs:Embed=true`;
+            // Cập nhật thuộc tính src của thẻ img
+            document.getElementById('dynamicImage').src = imageUrl;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/*Custom style*/
+.e-bg-light {
+    background-color: #8ec1f554 !important;
+}
+.e-bg-dark {
+    background-color: #212529 !important;
+}
+.e-text-dark {
+    color: #212529;
+}
+.e-list-text {
+    color: #212529;
+    font-size: 14px;
+    font-weight:500;
+}
+.e-navbar-dark {
+    background: linear-gradient(45deg, rgba(5, 81, 96, 1), #052c65);
+}
+/*RESIZABLE TABLE*/
+/*Custome dragging*/
+.dragging {
+    position: absolute;
+    border-left: dashed 1px #ff0000;
+    width: 1px;
+    height: 100%;
+    right: 0;
+}
+/*LOADING SCREEN*/
+#content {
+    display: none;
+}
+
+#content2 {
+    display: none;
+}
+
+#loadingImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loadingImg2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+}
+
+.cube {
+    width: 33%;
+    height: 33%;
+    background-color: #3498db;
+    float: left;
+    animation: sk-cubeGrid 1.3s infinite ease-in-out;
+}
+
+.cube1 {
+    animation-delay: 0.2s;
+}
+
+.cube2 {
+    animation-delay: 0.3s;
+}
+
+.cube3 {
+    animation-delay: 0.4s;
+}
+
+.cube4 {
+    animation-delay: 0.1s;
+}
+
+.cube5 {
+    animation-delay: 0.2s;
+}
+
+.cube6 {
+    animation-delay: 0.3s;
+}
+
+.cube7 {
+    animation-delay: 0s;
+}
+
+.cube8 {
+    animation-delay: 0.1s;
+}
+
+.cube9 {
+    animation-delay: 0.2s;
+}
+
+@keyframes sk-cubeGrid {
+    0%, 70%, 100% {
+        transform: scale3D(1, 1, 1);
+    }
+
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+.e-ellipsis-100 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width:100px;
+}
+
+.e-ellipsis-200 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.e-ellipsis-300 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 300px;
+}

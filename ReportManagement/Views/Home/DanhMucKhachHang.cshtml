@@ -1,0 +1,88 @@
+﻿@model IEnumerable<KhachHang>
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("BaoCaoDanhMucKhachHang", "Home", FormMethod.Post))
+{
+    <div class="card mb-4 m-2">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            DANH MỤC KHÁCH HÀNG
+        </div>
+        <div class="card-body">
+            <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
+        </div>
+        <div class="card-body table-responsive">
+            <table id="resizeMe" class="table table-hover resizable-table">
+                <thead class="bg-info">
+                    <tr id="header-row">
+                        <th>@Html.CheckBox("ID")</th>
+                        <th class="text-nowrap draggable-table" data-column="1">Mã khách</th>
+                        <th class="text-nowrap draggable-table" data-column="2">Tên khách</th>
+                        <th class="text-nowrap draggable-table" data-column="3">Mã số thuế</th>
+                        <th class="text-nowrap draggable-table" data-column="4">Địa chỉ</th>
+                        <th class="text-nowrap draggable-table" data-column="5">Còn giao dịch</th>
+                        <th class="text-nowrap draggable-table" data-column="6">Điện thoại</th>
+                        <th class="text-nowrap draggable-table" data-column="7">Fax</th>
+                        <th class="text-nowrap draggable-table" data-column="8">Email</th>
+                        <th class="text-nowrap draggable-table" data-column="9">Đối tác</th>
+                        <th class="text-nowrap draggable-table" data-column="10">Tài khoản ngân hàng</th>
+                        <th class="text-nowrap draggable-table" data-column="11">Tên ngân hàng</th>
+                        <th class="text-nowrap draggable-table" data-column="12">Tỉnh thành</th>
+                        <th class="text-nowrap draggable-table" data-column="13">Ghi chú</th>
+                        <th class="text-nowrap draggable-table" data-column="14">Nhóm khách hàng 1</th>
+                        <th class="text-nowrap draggable-table" data-column="15">Nhóm khách hàng 2</th>
+                        <th class="text-nowrap draggable-table" data-column="16">Nhóm khách hàng 3</th>
+                        <th class="text-nowrap draggable-table" data-column="17">Tên 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var kh in Model)
+                    {
+
+                        bool isConGiaoDich = (kh.IsConGiaoDich) ?? true;
+
+                        <tr>
+                            <td><input id="@kh.Id" type="checkbox" name="list" value="@kh.Id" /></td>
+                            <td>@Html.DisplayFor(Model => kh.KhachHangUd)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => kh.KhachHangNm)</td>
+                            <td>@Html.DisplayFor(Model => kh.MaSoThue)</td>
+                            <td class="e-ellipsis-100">@Html.DisplayFor(Model => kh.DiaChi)</td>
+                            <td class="text-center">@Html.CheckBox("isGiaoDich", isConGiaoDich)</td>
+                            <td>@Html.DisplayFor(Model => kh.DienThoai)</td>
+                            <td>@Html.DisplayFor(Model => kh.Fax)</td>
+                            <td>@Html.DisplayFor(Model => kh.Email)</td>
+                            <td>@Html.DisplayFor(Model => kh.DoiTac)</td>
+                            <td>@Html.DisplayFor(Model => kh.TkNganHang)</td>
+                            <td>@Html.DisplayFor(Model => kh.TenNganHang)</td>
+                            <td>@Html.DisplayFor(Model => kh.TinhThanh)</td>
+                            <td>@Html.DisplayFor(Model => kh.GhiChu)</td>
+                            <td>@Html.DisplayFor(Model => kh.NhomKhachHang1)</td>
+                            <td>@Html.DisplayFor(Model => kh.NhomKhachHang2)</td>
+                            <td>@Html.DisplayFor(Model => kh.NhomKhachHang3)</td>
+                            <td>@Html.DisplayFor(Model => kh.KhachHangNm2)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+}

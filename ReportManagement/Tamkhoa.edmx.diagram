@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab36c5c23e2c4df5839d0059bf5607cc" Name="Diagram1">
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.BoPhanHT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.CongTrinh" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.ChiNhanh" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.DieuChinhThueTNDN" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.DMChung" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.DmMaPhi" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.DmTruongTuDo" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.DuDauKyCongNo" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.HoaDonGTGT" Width="1.5" PointX="6" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.HoaDonMuaHang" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.KhachHang" Width="1.5" PointX="3.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.Kho" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.NgoaiTe" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.NhomKhachHang" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.NhomVatTu" Width="1.5" PointX="13.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhanBoChietKhauThuongMai" Width="1.5" PointX="3" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhanBoChiPhi" Width="1.5" PointX="3" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhanBoThueNk" Width="1.5" PointX="3" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuChi" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuChiCT" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuKeToan" Width="1.5" PointX="3.75" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuKeToanCt" Width="1.5" PointX="6" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuNhap" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuNhapCT" Width="1.5" PointX="3" PointY="59.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuNhapKho" Width="1.5" PointX="6.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuNhapKhoCt" Width="1.5" PointX="9" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuThu" Width="1.5" PointX="6.75" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuThuCT" Width="1.5" PointX="9" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuXuat" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuXuatDcKho" Width="1.5" PointX="6.75" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuXuatDcKhoCt" Width="1.5" PointX="9" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuXuatKho" Width="1.5" PointX="6.75" PointY="63" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.PhieuXuatKhoCt" Width="1.5" PointX="9" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.QuyenSo" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.SoCai" Width="1.5" PointX="9" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.TaiKhoan" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.TyGiaNgoaiTe" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.TheKho" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.VatTu" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BORO_EACCOUNTING_WEB_V1Model.VuViec" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_HoaDonGTGT_KhachHang_KhachHangId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_HoaDonGTGT_PhieuChi_PhieuChiId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_HoaDonGTGT_PhieuKeToan_PhieuKeToanId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_HoaDonGTGT_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_HoaDonMuaHang_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_TyGiaNgoaiTe_NgoaiTe_NgoaiTeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhanBoChietKhauThuongMai_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhanBoChiPhi_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhanBoThueNk_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuChiCT_PhieuChi_PhieuChiId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuChi_PhieuChiId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuKeToanCt_PhieuKeToan_PhieuKeToanId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuKeToan_PhieuKeToanId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuNhapCT_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuNhap_PhieuNhapId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuNhapKhoCt_PhieuNhapKho_PhieuNhapKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuNhapKho_PhieuNhapKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_TheKho_PhieuNhapKhoCt_PhieuNhapKhoCtId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuThuCT_PhieuThu_PhieuThuId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuThu_PhieuThuId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuXuatDcKhoCt_PhieuXuatDcKho_PhieuXuatDcKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuXuatDcKho_PhieuXuatDcKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_TheKho_PhieuXuatDcKhoCt_PhieuXuatDcKhoCtId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_PhieuXuatKhoCt_PhieuXuatKho_PhieuXuatKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_SoCai_PhieuXuatKho_PhieuXuatKhoId" ManuallyRouted="false" />
+        <AssociationConnector Association="BORO_EACCOUNTING_WEB_V1Model.FK_TheKho_PhieuXuatKhoCt_PhieuXuatKhoCtId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
