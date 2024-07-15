@@ -65,12 +65,12 @@
             </div>
             <div class="modal-body d-flex justify-content-center align-items-center align-content-center">
                 <label>Từ:</label>
-                <div id="datepicker" class="input-group date justify-content-center align-items-center align-content-center" data-date-format="mm-dd-yyyy">
+                <div id="datepicker" class="input-group date justify-content-center align-items-center align-content-center" data-date-format="dd-mm-yyyy">
                     @Html.TextBox("fromDate", null, new { @class = "form-control", placeholder = "Ngày bắt đầu" })
                     <span class="input-group-addon btn btn-outline-dark"><i class="fa-solid fa-calendar-days"></i></span>
                 </div>
                 <label>Đến:</label>
-                <div id="datepicker2" class="input-group date justify-content-center align-items-center align-content-center" data-date-format="mm-dd-yyyy">
+                <div id="datepicker2" class="input-group date justify-content-center align-items-center align-content-center" data-date-format="dd-mm-yyyy">
                     @Html.TextBox("toDate", null, new { @class = "form-control", placeholder = "Ngày kết thúc" })
                     <span class="input-group-addon ms-0 btn btn-outline-dark"><i class="fa-solid fa-calendar-days "></i></span>
                 </div>

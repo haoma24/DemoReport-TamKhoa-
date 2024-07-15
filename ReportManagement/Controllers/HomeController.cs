@@ -283,8 +283,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -292,8 +292,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
