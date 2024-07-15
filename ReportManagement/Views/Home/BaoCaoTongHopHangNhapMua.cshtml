@@ -13,6 +13,10 @@
                 string denngay = ViewBag.ToDate;
                 string taikhoan_id = ViewBag.TaikhoanId;
                 string MauBc = ViewBag.MauBc;
+                if (MauBc.IsEmpty())
+                {
+                    MauBc = "1";
+                }
                 name = name + MauBc;
                 string id = ViewBag.Id;
                 string link = "";

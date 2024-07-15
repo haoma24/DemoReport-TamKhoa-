@@ -151,48 +151,48 @@ namespace ReportManagement.Controllers
         }
         public ActionResult BaoCaoSoQuy(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.Name = "SoQuyTienMat";
             ViewBag.Taikhoan_id = form["taikhoanid"];
             return View();
         }
         public ActionResult BaoCaoSoQuyTienGuiNganHang(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.Name = "SoQuyTienMat";
             ViewBag.Taikhoan_id = form["Id"];
             return View();
         }
         public ActionResult BaoCaoSoQuyTienMat(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.Name = "SoQuyTienMatTheoNgay";
             ViewBag.Taikhoan_id = form["taikhoanid"];
             return View();
         }
         public ActionResult BaoCaoSoTongHopChuT(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.Name = "SoTongHopChuT";
             ViewBag.Taikhoan_id = form["taikhoanid"];
             return View();
         }
         public ActionResult BaoCaoSoChiTietMotTaiKhoan(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.Name = "SoChiTietMotTaiKhoan";
             ViewBag.Taikhoan_id = form["taikhoanid"];
             return View();
         }
         public ActionResult BaoCaoTongHopHangNhapMua(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.Parse(form["fromDate"]).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.Parse(form["toDate"]).ToString("MM/dd/yyyy");
+            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             ViewBag.ReportName = "TongHopHangNhapMuaMau";
             ViewBag.MauBc = form["MauBc"];
             ViewBag.Taikhoan_id = "350";
@@ -263,13 +263,26 @@ namespace ReportManagement.Controllers
         }
         public ActionResult NgayBaoCaoTongHopHangNhapMua(string name)
         {
+            var tk = db.TaiKhoan.OrderBy(x => x.Id);
+            List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
+            foreach (var item in tk.Where(x => x.Id == 5 || x.TaiKhoanParentId == 5))
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.TaiKhoanUd,
+                    Text = item.TaiKhoanUd
+                };
+                listTaiKhoan.Add(listItem);
+            };
+
+
+            ViewData["TaiKhoanId"] = listTaiKhoan;
             if (name == "" || name == null || name.Contains(" "))
             {
-            SoCai soCai = new SoCai();
-            ViewBag.TaikhoanID = new SelectList(db.TaiKhoan, "Id", "TaikhoanUd");
-            ViewBag.viewName = (string)Session["ViewName"];
-            }    
-            else ViewBag.viewName = name;
+                ViewBag.viewName = (string)Session["ViewName"];
+            }
+            else
+                ViewBag.viewName = name;
 
             return View();
         }
@@ -319,8 +332,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -328,8 +341,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"]!=null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -357,8 +370,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -366,8 +379,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -400,8 +413,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -409,8 +422,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -444,8 +457,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 taikhoanud = int.Parse(taiKhoan.Id);
                 string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
                 DataTable tempdt = knA00.ExecuteQuery(sql, null);
@@ -459,8 +472,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 taikhoanid = (int)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
@@ -493,8 +506,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 taikhoanud = int.Parse(taiKhoan.Id);
                 string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '"+taikhoanud+"'";
                 DataTable tempdt = knA00.ExecuteQuery(sql, null);
@@ -508,8 +521,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 taikhoanid = (int)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
@@ -542,8 +555,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 taikhoanud = int.Parse(taiKhoan.Id);
                 string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
                 DataTable tempdt = knA00.ExecuteQuery(sql, null);
@@ -557,8 +570,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 taikhoanid = (int)Session["taikhoanid"];
                 taikhoanud = (int)Session["taikhoanud"];
                 ViewBag.taikhoanid = taikhoanid;
@@ -594,8 +607,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 LoaiPn = form["LoaiPn"];
                 MauBc = form["MauBc"];
                 if (LoaiPn == null || MauBc == null)
@@ -612,8 +625,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 LoaiPn = (string)Session["LoaiPn"];
                 MauBc = (string)Session["MauBc"];
                 if (LoaiPn == null || MauBc == null)
@@ -661,8 +674,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -670,8 +683,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -699,8 +712,8 @@ namespace ReportManagement.Controllers
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse(form["fromDate"]);
-                toDate = DateTime.Parse(form["toDate"]);
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -708,8 +721,8 @@ namespace ReportManagement.Controllers
             if (Session["fromDate"] != null || Session["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
-                fromDate = DateTime.Parse((string)Session["fromDate"]);
-                toDate = DateTime.Parse((string)Session["toDate"]);
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
