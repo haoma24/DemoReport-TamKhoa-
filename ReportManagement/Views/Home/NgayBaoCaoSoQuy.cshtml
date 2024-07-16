@@ -42,7 +42,7 @@
 
     #datepicker {
         width: 180px;
-        margin: 0 0 0 5px;
+        margin: 0 0 0 0px;
     }
 
         #datepicker > span:hover {
@@ -51,7 +51,7 @@
 
     #datepicker2 {
         width: 180px;
-        margin: 0 0 0 5px;
+        margin: 0 0 0 0px;
     }
 
         #datepicker2 > span:hover {
@@ -150,7 +150,7 @@
                     <div class="d-flex align-items-center mb-3 align-content-center">
                         @Html.LabelFor(model => model.Id, "Tài khoản", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10 d-flex">
-                            @Html.DropDownListFor(model => model.Id, (List<SelectListItem>)ViewData["TaiKhoanId"], htmlAttributes: new { @class = "form-control w-25", id = "itemDropdown" })
+                            @Html.DropDownListFor(model => model.Id, (List<SelectListItem>)ViewData["TaiKhoanId"], htmlAttributes: new { @class = "form-select w-25", id = "itemDropdown" })
                             @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
                             <div class="d-flex align-items-center p-2 w-50"><span id="itemName" class="badge text-bg-secondary"></span></div>
                         </div>

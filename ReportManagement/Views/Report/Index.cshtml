@@ -1,0 +1,26 @@
+﻿@using ReportViewerForMvc;
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body class="bg-dark bg-opacity-50">
+    <main>
+        <div class="d-flex justify-content-center align-content-center h-auto overflow-hidden pt-5">
+            <section class="h-auto overflow-hidden shadow" aria-labelledby="gettingStartedTitle" style="background-color:white; border:1px solid black;">
+                @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer, new { scrolling = "no" })
+            </section>
+            <div><a href="@Url.Action("PhieuThuTienMat","Home")" class="ms-2 btn btn-danger fw-bold">x</a></div>
+        </div>
+    </main>
+</body>
+</html>

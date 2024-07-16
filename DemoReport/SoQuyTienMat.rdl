@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-11T03:06:45.0380082Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T07:43:44.8266606Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -256,7 +256,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=IIF(First(Fields!Taikhoan_ud.Value, "TaiKhoan")=111,"SỔ QUỸ TIỀN MẶT", "SỔ TIỀN GỬI NGÂN HÀNG")</Value>
+                        <Value>SỔ QUỸ TIỀN MẶT</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                           <FontSize>20pt</FontSize>
@@ -1641,7 +1641,25 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>="Tài khoản: " + First(Fields!Taikhoan_ud.Value, "TaiKhoan")+"-"+First(Fields!taikhoan_nm.Value, "TaiKhoan")</Value>
+                        <Value>Tài khoản: </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!Taikhoan_ud.Value, "TaiKhoan")</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> - </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!taikhoan_nm.Value, "TaiKhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>

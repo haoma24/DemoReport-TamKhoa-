@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-01T04:46:32.9223869Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T08:06:42.1015156Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -28,7 +28,7 @@
       <Query>
         <DataSourceName>A00000</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@taikhoan_id">
+          <QueryParameter Name="@_taikhoan_id">
             <Value>=Parameters!taikhoan_id.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@_tungay">
@@ -224,6 +224,28 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="Taikhoan">
+      <Query>
+        <DataSourceName>A00000</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@taikhoan_id">
+            <Value>=Parameters!taikhoan_id.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT Taikhoan_ud, taikhoan_nm FROM TaiKhoan
+WHERE Taikhoan_id = @taikhoan_id</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Taikhoan_ud">
+          <DataField>Taikhoan_ud</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="taikhoan_nm">
+          <DataField>taikhoan_nm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -253,6 +275,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox2</rd:DefaultName>
                 <Top>1.5249cm</Top>
+                <Left>0cm</Left>
                 <Height>0.87517cm</Height>
                 <Width>21.92874cm</Width>
                 <Style>
@@ -1327,6 +1350,7 @@
                 <RepeatRowHeaders>true</RepeatRowHeaders>
                 <DataSetName>SoQuyTienMat</DataSetName>
                 <Top>4.14608cm</Top>
+                <Left>0cm</Left>
                 <Height>3.28515cm</Height>
                 <Width>21.92874cm</Width>
                 <ZIndex>1</ZIndex>
@@ -1343,7 +1367,25 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Tài khoản: 111 - Tiền mặt</Value>
+                        <Value>Tài khoản: </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!Taikhoan_ud.Value, "Taikhoan")</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> - </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=First(Fields!taikhoan_nm.Value, "Taikhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1356,9 +1398,8 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>2.47063cm</Top>
-                <Left>7.80943cm</Left>
                 <Height>0.6cm</Height>
-                <Width>6.945cm</Width>
+                <Width>21.92874cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -1412,6 +1453,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>3.17646cm</Top>
+                <Left>0cm</Left>
                 <Height>0.6cm</Height>
                 <Width>21.92874cm</Width>
                 <ZIndex>3</ZIndex>
@@ -1456,6 +1498,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
                 <Top>0.01962cm</Top>
+                <Left>0cm</Left>
                 <Height>1.09725cm</Height>
                 <Width>10.5076cm</Width>
                 <ZIndex>4</ZIndex>
@@ -1519,6 +1562,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>7.60762cm</Top>
+                <Left>0cm</Left>
                 <Height>0.6cm</Height>
                 <Width>13.2458cm</Width>
                 <ZIndex>5</ZIndex>
@@ -1559,6 +1603,7 @@
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>8.27818cm</Top>
+                <Left>0cm</Left>
                 <Height>0.6cm</Height>
                 <Width>6.945cm</Width>
                 <ZIndex>6</ZIndex>

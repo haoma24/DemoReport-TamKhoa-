@@ -3,7 +3,7 @@
     ViewBag.Title = "KhachHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("BaoCaoDanhMucKhachHang", "Home", FormMethod.Post))
+@using (Html.BeginForm("BaoCaoDanhMucKhachHang", "Home", FormMethod.Post, new { target = "_blank" }))
 {
     <div class="card mb-4 m-2">
         <div class="card-header">

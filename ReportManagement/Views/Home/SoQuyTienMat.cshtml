@@ -4,7 +4,7 @@
     System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
 }
 
-@using (Html.BeginForm("BaoCaoSoQuy", "Home", FormMethod.Post))
+@using (Html.BeginForm("BaoCaoSoQuy", "Home", FormMethod.Post, new { target = "_blank" }))
 {
     <div class="card mb-4 m-2">
         <div class="card-header">
@@ -15,7 +15,7 @@
             <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
             <input id="@ViewBag.fromDate" type="text" hidden name="fromDate" value="@ViewBag.fromDate" />
             <input id="@ViewBag.toDate" type="text" hidden name="toDate" value="@ViewBag.toDate" />
-            <input id="taikhoaid" type="text" hidden name="taikhoanid" value="350" />
+            <input id="taikhoaid" type="text" hidden name="taikhoanid" value="@ViewBag.taikhoanid" />
         </div>
         <div class="card-body">
             <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>

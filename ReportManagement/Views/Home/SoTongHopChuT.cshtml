@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
 }
-@using (Html.BeginForm("BaoCaoSoTongHopChuT", "Home", FormMethod.Post))
+@using (Html.BeginForm("BaoCaoSoTongHopChuT", "Home", FormMethod.Post, new { target = "_blank" }))
 {
     <div class="card mb-4 m-2">
         <div class="card-header">

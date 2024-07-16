@@ -36,6 +36,29 @@ textarea {
 .e-navbar-dark {
     background: linear-gradient(45deg, rgba(5, 81, 96, 1), #052c65);
 }
+.e-ellipsis-100 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100px;
+}
+
+.e-ellipsis-200 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.e-ellipsis-300 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 300px;
+}
+.e-ms-5px {
+    margin-left: 5px !important;
+}
 /*RESIZABLE TABLE*/
 /*Custome dragging*/
 .dragging {
@@ -137,23 +160,4 @@ textarea {
         transform: scale3D(0, 0, 1);
     }
 }
-.e-ellipsis-100 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width:100px;
-}
 
-.e-ellipsis-200 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 200px;
-}
-
-.e-ellipsis-300 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 300px;
-}

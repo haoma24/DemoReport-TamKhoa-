@@ -8,9 +8,36 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
-
+using Microsoft.Reporting.WebForms;
+using System.Configuration;
+using System.Security.Cryptography;
 namespace ReportManagement.Controllers
 {
+    public class ReportViewerInitializer
+    {
+        private string url;
+        private ReportViewer reportViewer;
+
+        public ReportViewerInitializer()
+        {
+            // Khai báo và khởi tạo các thuộc tính trong constructor
+            url = ConfigurationManager.AppSettings["SSRSReportsUrl"].ToString();
+            reportViewer = new ReportViewer
+            {
+                ProcessingMode = ProcessingMode.Remote,
+                SizeToReportContent = true,
+                AsyncRendering = true,
+                Width = Unit.Percentage(100),
+                Height = Unit.Percentage(100)
+            };
+            reportViewer.ServerReport.ReportServerUrl = new Uri(url);
+        }
+
+        public ReportViewer GetReportViewer()
+        {
+            return reportViewer;
+        }
+    }
     public class HomeController : Controller
     {
         
@@ -23,6 +50,7 @@ namespace ReportManagement.Controllers
               "Initial Catalog=BORO_EACCOUNTING_WEB_V1;" +
               "User id=sa;" +
               "Password=Tamkhoa@123;");
+        ReportViewer reportViewer = new ReportViewerInitializer().GetReportViewer();
         public ActionResult Index()
         {
             return View();
@@ -44,10 +72,13 @@ namespace ReportManagement.Controllers
             }
             else
                 _id = "1";
-            
-            ViewBag.Name = "PhieuThuTienMat";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/PhieuThuTienMat";
+            ReportParameter[] parameters = new ReportParameter[1];
+            parameters[0] = new ReportParameter("PhieuThuId", _id, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "PhieuThuTienMat";
+            return View("~/Views/Report/Index.cshtml");
         }
         //Phieu chi
         public ActionResult BaoCaoPhieuChi(string[] list)
@@ -65,9 +96,13 @@ namespace ReportManagement.Controllers
             else
                 _id = "1";
 
-            ViewBag.Name = "PhieuChiTienMat";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/PhieuChiTienMat";
+            ReportParameter[] parameters = new ReportParameter[1];
+            parameters[0] = new ReportParameter("PhieuChiId", _id, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "PhieuChiTienMat";
+            return View("~/Views/Report/Index.cshtml");
         }
         //Khach hang
         public ActionResult BaoCaoDanhMucKhachHang(string[] list)
@@ -85,9 +120,10 @@ namespace ReportManagement.Controllers
             else
                 _id = "1";
 
-            ViewBag.Name = "DanhMucKhachHang";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/DanhMucKhachHang";
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "DanhMucKhachHang";
+            return View("~/Views/Report/Index.cshtml");
         }
         //Phieu nhap
         public ActionResult BaoCaoPhieuNhap(string[] list)
@@ -105,9 +141,13 @@ namespace ReportManagement.Controllers
             else
                 _id = "1";
 
-            ViewBag.Name = "PhieuNhapKho";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/PhieuNhapKho";
+            ReportParameter[] parameters = new ReportParameter[1];
+            parameters[0] = new ReportParameter("PhieuNhapId", _id, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "PhieuNhap";
+            return View("~/Views/Report/Index.cshtml");
         }
         //Phieu xuat
         public ActionResult BaoCaoPhieuXuatKho(string[] list)
@@ -125,9 +165,13 @@ namespace ReportManagement.Controllers
             else
                 _id = "1";
 
-            ViewBag.Name = "PhieuXuatNoiBo";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/PhieuXuatKhoNoiBo";
+            ReportParameter[] parameters = new ReportParameter[1];
+            parameters[0] = new ReportParameter("PhieuXuatKhoId", _id, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "PhieuXuatKhoNoiBo";
+            return View("~/Views/Report/Index.cshtml");
         }
         //Vat tu
         public ActionResult BaoCaoDanhMucVatTu(string[] list)
@@ -145,33 +189,58 @@ namespace ReportManagement.Controllers
             else
                 _id = "1";
 
-            ViewBag.Name = "DanhMucVatTu";
-            ViewBag.Id = _id;
-            return View();
+            reportViewer.ServerReport.ReportPath = "/DemoReport/DanhMucVatTu";
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "DanhMucVatTu";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoSoQuy(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.Name = "SoQuyTienMat";
-            ViewBag.Taikhoan_id = form["taikhoanid"];
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _id = form["taikhoanid"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoQuyTienMat";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("taikhoan_id", _id, true);
+            parameters[1] = new ReportParameter("tungay", tungay, true);
+            parameters[2] = new ReportParameter("denngay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoQuyTienMat";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoSoQuyTienGuiNganHang(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.Name = "SoQuyTienMat";
-            ViewBag.Taikhoan_id = form["Id"];
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
+            string _id = form["taikhoanid"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoQuyTienMat";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("taikhoan_id", _id, true);
+            parameters[1] = new ReportParameter("tungay", tungay, true);
+            parameters[2] = new ReportParameter("denngay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoTienGuiNganHang";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoSoQuyTienMat(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.Name = "SoQuyTienMatTheoNgay";
-            ViewBag.Taikhoan_id = form["taikhoanid"];
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _id = form["taikhoanid"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoQuyTienMatTheoNgay";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("taikhoan_id", _id, true);
+            parameters[1] = new ReportParameter("tungay", tungay, true);
+            parameters[2] = new ReportParameter("denngay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoQuyTienMatTheoNgay";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoSoTongHopChuT(FormCollection form)
         {
@@ -213,7 +282,6 @@ namespace ReportManagement.Controllers
         }
         public ActionResult NgayBaoCaoSoQuy(string name)
         {
-            SoCai soCai = new SoCai();
             var tk = db.TaiKhoan.OrderBy(x => x.Id);
             List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
                 foreach (var item in tk)
@@ -238,7 +306,6 @@ namespace ReportManagement.Controllers
         }
         public ActionResult NgayBaoCaoSoTienGuiNganHang(string name)
         {
-            SoCai soCai = new SoCai();
             var tk = db.TaiKhoan.OrderBy(x => x.Id);
             List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
             foreach (var item in tk.Where(x => x.Id == 5 || x.TaiKhoanParentId == 5))
@@ -362,16 +429,23 @@ namespace ReportManagement.Controllers
             return View(pt.Take(10).ToList());
         }
         //So quy tien mat
-        public ActionResult SoQuyTienMat(FormCollection form)
+        public ActionResult SoQuyTienMat(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-
+            int taikhoanud = 111;
+            int taikhoanid = 350;
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
+                taikhoanud = int.Parse(taiKhoan.Id);
+                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
+                DataTable tempdt = knA00.ExecuteQuery(sql, null);
+                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -381,6 +455,8 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                taikhoanid = (int)Session["TaiKhoanId"];
+                ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -392,29 +468,34 @@ namespace ReportManagement.Controllers
                 return RedirectToAction("NgayBaoCaoSoQuy", "Home");
             }
 
-            //Viewbag hien thi tren title
-            ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
-            ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
 
+        kt: Session["TaiKhoanId"] = taikhoanid;
             Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
-        kt: string sqlQuery = "exec SoQuyTienMat @taikhoan_id = 350, @tungay= '"+ fromDate.ToString("MM/dd/yyyy")+"', @denngay='"+ toDate.ToString("MM/dd/yyyy")+"'";
+            string sqlQuery = "exec SoQuyTienMat @taikhoan_id = "+taikhoanid+", @tungay= '" + fromDate.ToString("MM/dd/yyyy")+"', @denngay='"+ toDate.ToString("MM/dd/yyyy")+"'";
             DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
         //So quy tien mat theo ngay
-        public ActionResult SoQuyTienMatTheoNgay(FormCollection form)
+        public ActionResult SoQuyTienMatTheoNgay(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-
+            int taikhoanud = 111;
+            int taikhoanid = 350;
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
+                taikhoanud = int.Parse(taiKhoan.Id);
+                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
+                DataTable tempdt = knA00.ExecuteQuery(sql, null);
+                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -424,6 +505,8 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                taikhoanid = (int)Session["TaiKhoanId"];
+                ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -435,14 +518,11 @@ namespace ReportManagement.Controllers
                 return RedirectToAction("NgayBaoCaoSoQuy", "Home");
             }
 
-            //Viewbag hien thi tren title
-            ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
-            ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
-
+        kt: Session["TaiKhoanId"] = taikhoanid;
             Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
-        kt: string sqlQuery = "exec SoQuyTienMatTheoNgay @taikhoan_id = 350, @_tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @_denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            string sqlQuery = "exec SoQuyTienMatTheoNgay @_taikhoan_id = "+taikhoanid+", @_tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @_denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
             DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
