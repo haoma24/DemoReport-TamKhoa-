@@ -244,28 +244,51 @@ namespace ReportManagement.Controllers
         }
         public ActionResult BaoCaoSoTongHopChuT(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.Name = "SoTongHopChuT";
-            ViewBag.Taikhoan_id = form["taikhoanid"];
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _id = form["taikhoanid"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoTongHopChuT";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("taikhoan_id", _id, true);
+            parameters[1] = new ReportParameter("tungay", tungay, true);
+            parameters[2] = new ReportParameter("denngay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoTongHopChuT";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoSoChiTietMotTaiKhoan(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.Name = "SoChiTietMotTaiKhoan";
-            ViewBag.Taikhoan_id = form["taikhoanid"];
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _id = form["taikhoanid"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoChiTietMotTaiKhoan";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("taikhoan_id", _id, true);
+            parameters[1] = new ReportParameter("tungay", tungay, true);
+            parameters[2] = new ReportParameter("denngay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoChiTietTaiKhoan";
+            return View("~/Views/Report/Index.cshtml");
         }
         public ActionResult BaoCaoTongHopHangNhapMua(FormCollection form)
         {
-            ViewBag.FromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ToDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            ViewBag.ReportName = "TongHopHangNhapMuaMau";
-            ViewBag.MauBc = form["MauBc"];
-            ViewBag.Taikhoan_id = "350";
-            return View();
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("dd/MM/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("dd/MM/yyyy");
+            string mauBC = form["MauBc"];
+            if (mauBC.IsNullOrWhiteSpace())
+                mauBC = "1";
+            reportViewer.ServerReport.ReportPath = "/DemoReport/TongHopHangNhapMuaMau"+mauBC;
+            ReportParameter[] parameters = new ReportParameter[2];
+            parameters[0] = new ReportParameter("TuNgay", tungay, true);
+            parameters[1] = new ReportParameter("DenNgay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "TongHopHangNhap";
+            return View("~/Views/Report/Index.cshtml");
         }
         //VIEW BAO CAO - END
 

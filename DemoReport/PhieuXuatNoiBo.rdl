@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-01T07:45:12.2537322Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:13:20.3585548Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -182,8 +182,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.33867cm</Top>
-            <Left>12.66708cm</Left>
+            <Top>0.33866cm</Top>
+            <Left>13.17919cm</Left>
             <Height>1.30582cm</Height>
             <Width>7.77051cm</Width>
             <ZIndex>1</ZIndex>
@@ -1386,7 +1386,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>16.78634cm</Left>
+            <Left>17.3067cm</Left>
             <Height>2.505cm</Height>
             <Width>3.643cm</Width>
             <ZIndex>11</ZIndex>
@@ -1435,7 +1435,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>11.75925cm</Left>
+            <Left>12.06353cm</Left>
             <Height>2.505cm</Height>
             <Width>4.8507cm</Width>
             <ZIndex>12</ZIndex>
@@ -1484,7 +1484,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>5.18825cm</Left>
+            <Left>5.39639cm</Left>
             <Height>2.505cm</Height>
             <Width>6.39461cm</Width>
             <ZIndex>13</ZIndex>
@@ -1607,8 +1607,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ngày_lập</rd:DefaultName>
-            <Top>10.2661cm</Top>
-            <Left>14.55558cm</Left>
+            <Top>10.23081cm</Top>
+            <Left>15.0842cm</Left>
             <Height>0.63527cm</Height>
             <Width>5.8655cm</Width>
             <ZIndex>16</ZIndex>
@@ -1627,7 +1627,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
         <Height>6.57501in</Height>
         <Style />
       </Body>
-      <Width>8.3in</Width>
+      <Width>8.41667in</Width>
       <Page>
         <PageFooter>
           <Height>1.79917cm</Height>
@@ -1638,7 +1638,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
               <Top>0.3175cm</Top>
               <Left>0.33867cm</Left>
               <Height>0cm</Height>
-              <Width>20.09892cm</Width>
+              <Width>20.61103cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -1674,8 +1674,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox36</rd:DefaultName>
-              <Top>0.49389cm</Top>
-              <Left>16.03259cm</Left>
+              <Top>0.45861cm</Top>
+              <Left>16.5447cm</Left>
               <Height>0.6cm</Height>
               <Width>4.405cm</Width>
               <ZIndex>1</ZIndex>

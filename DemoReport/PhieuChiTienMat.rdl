@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-03T01:32:10.2311325Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:14:17.6485704Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -146,7 +146,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.4713cm</Top>
+            <Top>0.60393cm</Top>
             <Left>0.72364cm</Left>
             <Height>0.9787cm</Height>
             <Width>12.59999cm</Width>
@@ -182,7 +182,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.84624cm</Top>
+            <Top>1.97887cm</Top>
             <Left>6.80427cm</Left>
             <Height>0.87517cm</Height>
             <Width>6.945cm</Width>
@@ -233,7 +233,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.4713cm</Top>
+            <Top>0.60393cm</Top>
             <Left>14.43315cm</Left>
             <Height>1.30582cm</Height>
             <Width>5.74967cm</Width>
@@ -276,7 +276,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>3.35669cm</Top>
+            <Top>3.48932cm</Top>
             <Left>6.80427cm</Left>
             <Height>0.6cm</Height>
             <Width>6.945cm</Width>
@@ -316,10 +316,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>SoPhieu</rd:DefaultName>
-            <Top>1.88295cm</Top>
+            <Top>2.01558cm</Top>
             <Left>15.08863cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.99343cm</Width>
+            <Width>5.09419cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -351,7 +351,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>4.38994cm</Top>
+            <Top>4.52257cm</Top>
             <Left>0.72364cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90673cm</Width>
@@ -386,7 +386,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>4.98994cm</Top>
+            <Top>5.12257cm</Top>
             <Left>0.72364cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90673cm</Width>
@@ -421,7 +421,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>5.58994cm</Top>
+            <Top>5.72257cm</Top>
             <Left>0.72365cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90672cm</Width>
@@ -456,7 +456,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>6.18994cm</Top>
+            <Top>6.32257cm</Top>
             <Left>0.72364cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90673cm</Width>
@@ -491,7 +491,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>6.78994cm</Top>
+            <Top>6.92257cm</Top>
             <Left>0.72364cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90673cm</Width>
@@ -526,7 +526,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>7.38994cm</Top>
+            <Top>7.52257cm</Top>
             <Left>0.72365cm</Left>
             <Height>0.6cm</Height>
             <Width>3.90672cm</Width>
@@ -560,7 +560,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>7.38994cm</Top>
+            <Top>7.52257cm</Top>
             <Left>14.3737cm</Left>
             <Height>0.6cm</Height>
             <Width>3.1985cm</Width>
@@ -610,7 +610,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>9.14768cm</Top>
+            <Top>9.28031cm</Top>
             <Left>9.58185cm</Left>
             <Height>1.1715cm</Height>
             <Width>2.02376cm</Width>
@@ -660,7 +660,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>9.14768cm</Top>
+            <Top>9.28031cm</Top>
             <Left>11.782cm</Left>
             <Height>1.1715cm</Height>
             <Width>4.01582cm</Width>
@@ -710,10 +710,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>9.14768cm</Top>
+            <Top>9.28031cm</Top>
             <Left>15.97421cm</Left>
             <Height>1.1715cm</Height>
-            <Width>4.18207cm</Width>
+            <Width>4.20861cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -760,7 +760,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>9.14768cm</Top>
+            <Top>9.28031cm</Top>
             <Left>5.13329cm</Left>
             <Height>1.1715cm</Height>
             <Width>4.27217cm</Width>
@@ -810,7 +810,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
-            <Top>9.14768cm</Top>
+            <Top>9.28031cm</Top>
             <Left>0.72364cm</Left>
             <Height>1.1715cm</Height>
             <Width>4.23327cm</Width>
@@ -883,7 +883,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox36</rd:DefaultName>
-            <Top>12.07969cm</Top>
+            <Top>12.21232cm</Top>
             <Left>0.72364cm</Left>
             <Height>2.06102cm</Height>
             <Width>16.86184cm</Width>
@@ -918,10 +918,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ngày</rd:DefaultName>
-            <Top>8.33601cm</Top>
+            <Top>8.46864cm</Top>
             <Left>15.64335cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.51294cm</Width>
+            <Width>4.53947cm</Width>
             <ZIndex>18</ZIndex>
             <Style>
               <Border>
@@ -951,7 +951,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Nợ</rd:DefaultName>
-            <Top>2.62406cm</Top>
+            <Top>2.75669cm</Top>
             <Left>15.08863cm</Left>
             <Height>0.6cm</Height>
             <Width>0.87017cm</Width>
@@ -970,10 +970,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.54396cm</Width>
+                  <Width>1.58108cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.57056cm</Width>
+                  <Width>2.60768cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1070,10 +1070,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>PhieuChiCt</DataSetName>
-            <Top>2.62406cm</Top>
+            <Top>2.75669cm</Top>
             <Left>15.99407cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.11452cm</Width>
+            <Width>4.18875cm</Width>
             <ZIndex>20</ZIndex>
             <Style>
               <Border>
@@ -1102,7 +1102,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Ngày</rd:DefaultName>
-            <Top>2.75669cm</Top>
+            <Top>2.88932cm</Top>
             <Left>6.80427cm</Left>
             <Height>0.6cm</Height>
             <Width>6.945cm</Width>
@@ -1121,13 +1121,13 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.88559cm</Width>
+                  <Width>0.90814cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.58809cm</Width>
+                  <Width>1.61064cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.55286cm</Width>
+                  <Width>2.57541cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1256,10 +1256,10 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>PhieuChi</DataSetName>
-            <Top>3.35669cm</Top>
+            <Top>3.48932cm</Top>
             <Left>15.08863cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.02654cm</Width>
+            <Width>5.09419cm</Width>
             <ZIndex>22</ZIndex>
             <Style>
               <Border>
@@ -1288,7 +1288,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>QuyenSoId</rd:DefaultName>
-            <Top>4.38994cm</Top>
+            <Top>4.52257cm</Top>
             <Left>4.66564cm</Left>
             <Height>0.6cm</Height>
             <Width>9.6375cm</Width>
@@ -1321,7 +1321,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox71</rd:DefaultName>
-            <Top>4.98994cm</Top>
+            <Top>5.12257cm</Top>
             <Left>4.66564cm</Left>
             <Height>0.6cm</Height>
             <Width>9.63748cm</Width>
@@ -1356,7 +1356,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox72</rd:DefaultName>
-            <Top>5.58994cm</Top>
+            <Top>5.72257cm</Top>
             <Left>4.66564cm</Left>
             <Height>0.6cm</Height>
             <Width>9.63748cm</Width>
@@ -1394,7 +1394,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox73</rd:DefaultName>
-            <Top>6.18994cm</Top>
+            <Top>6.32257cm</Top>
             <Left>4.66564cm</Left>
             <Height>0.6cm</Height>
             <Width>9.63748cm</Width>
@@ -1427,7 +1427,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox74</rd:DefaultName>
-            <Top>6.78994cm</Top>
+            <Top>6.92257cm</Top>
             <Left>4.66564cm</Left>
             <Height>0.6cm</Height>
             <Width>9.63748cm</Width>
@@ -1446,7 +1446,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
         <Height>5.83in</Height>
         <Style />
       </Body>
-      <Width>9.19442in</Width>
+      <Width>8.25275in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

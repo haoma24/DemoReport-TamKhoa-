@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-03T02:05:01.4881420Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:16:07.0957194Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -81,6 +81,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.38462cm</Top>
+            <Left>0.33421cm</Left>
             <Height>1.15033cm</Height>
             <Width>17.50717cm</Width>
             <Style>
@@ -114,8 +116,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.15033cm</Top>
-            <Left>5.8493cm</Left>
+            <Top>1.53495cm</Top>
+            <Left>6.18351cm</Left>
             <Height>0.981cm</Height>
             <Width>8.76533cm</Width>
             <ZIndex>1</ZIndex>
@@ -165,8 +167,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>4.72861cm</Top>
-            <Left>13.05254cm</Left>
+            <Top>5.11323cm</Top>
+            <Left>13.38675cm</Left>
             <Height>1.4255cm</Height>
             <Width>7.10513cm</Width>
             <ZIndex>2</ZIndex>
@@ -202,8 +204,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>4.12861cm</Top>
-            <Left>13.05254cm</Left>
+            <Top>4.51323cm</Top>
+            <Left>13.38675cm</Left>
             <Height>0.6cm</Height>
             <Width>7.10513cm</Width>
             <ZIndex>3</ZIndex>
@@ -654,7 +656,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>ListKhachHang</DataSetName>
-            <Top>2.16661cm</Top>
+            <Top>2.55123cm</Top>
+            <Left>0.33421cm</Left>
             <Height>1.68683cm</Height>
             <Width>20.15767cm</Width>
             <ZIndex>4</ZIndex>

@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-11T03:48:12.0647759Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:22:35.9509630Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -101,7 +101,7 @@
                 <rd:DefaultName>Textbox2</rd:DefaultName>
                 <Top>1.50528cm</Top>
                 <Height>0.87517cm</Height>
-                <Width>20.62775cm</Width>
+                <Width>20.82646cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -135,7 +135,7 @@
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>2.45101cm</Top>
                 <Height>0.6cm</Height>
-                <Width>20.62775cm</Width>
+                <Width>20.82646cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -182,51 +182,8 @@
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>3.15684cm</Top>
                 <Height>0.6cm</Height>
-                <Width>20.62775cm</Width>
+                <Width>20.82646cm</Width>
                 <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox1">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Đơn vị: CÔNG TY CỔ PHẦN CÔNG NGHỆ TAM KHOA - PHẦN MỀM KẾ TOÁN BORO - EACCOUNTING</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontSize>8pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Địa chỉ: 110/26 - 110/28 Ông Ích Khiêm, Phường 5, Quận 11, Tp Hồ Chí Minh</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontSize>8pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style />
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Height>1.09725cm</Height>
-                <Width>10.5076cm</Width>
-                <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -289,7 +246,7 @@
                 <Top>6.93044cm</Top>
                 <Height>0.6cm</Height>
                 <Width>10.1978cm</Width>
-                <ZIndex>4</ZIndex>
+                <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -329,7 +286,7 @@
                 <Top>7.601cm</Top>
                 <Height>0.6cm</Height>
                 <Width>6.945cm</Width>
-                <ZIndex>5</ZIndex>
+                <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -378,7 +335,7 @@
                 <Left>1.18298cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>6</ZIndex>
+                <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -427,7 +384,7 @@
                 <Left>9.44943cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>7</ZIndex>
+                <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -475,8 +432,8 @@
                 <Top>10.54405cm</Top>
                 <Left>16.37021cm</Left>
                 <Height>1.1715cm</Height>
-                <Width>4.25754cm</Width>
-                <ZIndex>8</ZIndex>
+                <Width>4.45625cm</Width>
+                <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -516,8 +473,8 @@
                 <Top>9.76767cm</Top>
                 <Left>16.37021cm</Left>
                 <Height>0.6cm</Height>
-                <Width>4.25754cm</Width>
-                <ZIndex>9</ZIndex>
+                <Width>4.45625cm</Width>
+                <ZIndex>8</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -571,8 +528,8 @@
                 <Top>3.89795cm</Top>
                 <Left>14.35088cm</Left>
                 <Height>0.6cm</Height>
-                <Width>6.27687cm</Width>
-                <ZIndex>10</ZIndex>
+                <Width>6.47558cm</Width>
+                <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -587,19 +544,19 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.5cm</Width>
+                      <Width>2.53974cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>9.06142cm</Width>
+                      <Width>9.10116cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>4.52671cm</Width>
+                      <Width>4.56645cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>4.46025cm</Width>
+                      <Width>4.49999cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>0.07938cm</Width>
+                      <Width>0.11912cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -961,7 +918,6 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
-                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                         </TablixMember>
@@ -1002,7 +958,6 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
-                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                         </TablixMember>
@@ -1097,8 +1052,8 @@
                 <DataSetName>SoTongHopChuT</DataSetName>
                 <Top>5.02461cm</Top>
                 <Height>1.8cm</Height>
-                <Width>20.62776cm</Width>
-                <ZIndex>11</ZIndex>
+                <Width>20.82646cm</Width>
+                <ZIndex>10</ZIndex>
                 <Style>
                   <Border>
                     <Style>Solid</Style>
@@ -1111,20 +1066,65 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.34326cm</Top>
-            <Left>0.77255cm</Left>
+            <Left>0.18067cm</Left>
             <Height>14.2473cm</Height>
-            <Width>20.70713cm</Width>
+            <Width>20.82646cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Đơn vị: CÔNG TY CỔ PHẦN CÔNG NGHỆ TAM KHOA - PHẦN MỀM KẾ TOÁN BORO - EACCOUNTING</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Địa chỉ: 110/26 - 110/28 Ông Ích Khiêm, Phường 5, Quận 11, Tp Hồ Chí Minh</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.34326cm</Top>
+            <Left>0.18067cm</Left>
+            <Height>1.09725cm</Height>
+            <Width>10.5076cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>6.03598in</Height>
         <Style />
       </Body>
-      <Width>9.28864in</Width>
+      <Width>8.42531in</Width>
       <Page>
         <PageFooter>
           <Height>0.99483cm</Height>

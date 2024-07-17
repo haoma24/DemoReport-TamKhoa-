@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T07:43:44.8266606Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:19:00.1392391Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -288,37 +288,37 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.28265cm</Width>
+                      <Width>2.2865cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.2444cm</Width>
+                      <Width>2.24825cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.18818cm</Width>
+                      <Width>1.19203cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.33996cm</Width>
+                      <Width>1.34381cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.4731cm</Width>
+                      <Width>1.47695cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.32817cm</Width>
+                      <Width>1.33202cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.72958cm</Width>
+                      <Width>2.73343cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.65521cm</Width>
+                      <Width>2.65906cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.75743cm</Width>
+                      <Width>2.76128cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.62907cm</Width>
+                      <Width>2.63292cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.25866cm</Width>
+                      <Width>1.26251cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -1626,7 +1626,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <DataSetName>SoQuyTienMat</DataSetName>
                 <Top>4.14608cm</Top>
                 <Height>3.28515cm</Height>
-                <Width>21.88641cm</Width>
+                <Width>21.92874cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1773,8 +1773,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Top>0.01962cm</Top>
-                <Left>13.82081cm</Left>
+                <Left>15.9375cm</Left>
                 <Height>1.30582cm</Height>
                 <Width>5.99124cm</Width>
                 <ZIndex>4</ZIndex>
@@ -2125,8 +2124,8 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
               </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Top>0.5cm</Top>
-            <Left>0.5cm</Left>
+            <Top>0.60579cm</Top>
+            <Left>0.61019cm</Left>
             <Height>13.49053cm</Height>
             <Width>21.92874cm</Width>
             <Style>
@@ -2136,13 +2135,13 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>5.50808in</Height>
+        <Height>5.54973in</Height>
         <Style />
       </Body>
       <Width>9.175in</Width>
       <Page>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>1.0281cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2165,12 +2164,14 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox54</rd:DefaultName>
-              <Top>0.17635cm</Top>
-              <Left>16.33685cm</Left>
+              <Top>0.17639cm</Top>
+              <Left>18.56373cm</Left>
               <Height>0.6cm</Height>
               <Width>3.9752cm</Width>
               <Style>

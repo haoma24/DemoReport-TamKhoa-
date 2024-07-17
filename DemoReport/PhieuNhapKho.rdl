@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-01T06:08:38.3372245Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-16T09:58:17.0626449Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -220,8 +220,8 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.52238cm</Top>
-            <Left>12.77051cm</Left>
+            <Top>0.52237cm</Top>
+            <Left>12.61892cm</Left>
             <Height>1.30582cm</Height>
             <Width>7.77051cm</Width>
             <ZIndex>1</ZIndex>
@@ -883,7 +883,7 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Ngày_lập</rd:DefaultName>
             <Top>2.87976cm</Top>
-            <Left>17.32546cm</Left>
+            <Left>16.66176cm</Left>
             <Height>1.23527cm</Height>
             <Width>3.72767cm</Width>
             <ZIndex>16</ZIndex>
@@ -1141,28 +1141,28 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.36837cm</Width>
+                  <Width>1.28541cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.33764cm</Width>
+                  <Width>2.25468cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.16622cm</Width>
+                  <Width>5.08326cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -2594,7 +2594,7 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
             <Top>8.18304cm</Top>
             <Left>0.49269cm</Left>
             <Height>4.8cm</Height>
-            <Width>20.56043cm</Width>
+            <Width>19.89675cm</Width>
             <ZIndex>23</ZIndex>
             <Style>
               <Border>
@@ -2684,13 +2684,13 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>8.86699in</Height>
+        <Height>8.8932in</Height>
         <Style />
       </Body>
-      <Width>9.44942in</Width>
+      <Width>8.27in</Width>
       <Page>
         <PageFooter>
-          <Height>1.88383cm</Height>
+          <Height>0.74167in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2724,7 +2724,7 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox36</rd:DefaultName>
               <Top>0.924cm</Top>
-              <Left>16.64813cm</Left>
+              <Left>15.98442cm</Left>
               <Height>0.6cm</Height>
               <Width>4.405cm</Width>
               <Style>
@@ -2741,7 +2741,7 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
               <Top>0.32938cm</Top>
               <Left>0.40594cm</Left>
               <Height>0cm</Height>
-              <Width>20.64719cm</Width>
+              <Width>19.98348cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -2756,13 +2756,9 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
-        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <PageHeight>11.69in</PageHeight>
+        <PageWidth>8.27in</PageWidth>
+        <ColumnSpacing>0.05118in</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -2847,6 +2843,6 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
     Return result
 End Function
 </Code>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>41f32686-e82f-47f9-b921-24964c16279f</rd:ReportID>
 </Report>
