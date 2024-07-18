@@ -19,7 +19,7 @@
             <section class="h-auto overflow-hidden shadow" aria-labelledby="gettingStartedTitle" style="background-color:white; border:1px solid black;">
                 @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer, new { scrolling = "no" })
             </section>
-            <div><a href="@Url.Action("PhieuThuTienMat","Home")" class="ms-2 btn btn-danger fw-bold">x</a></div>
+            <div><a href="@Url.Action(ViewBag.ViewName,"Home")" class="ms-2 btn btn-danger fw-bold">x</a></div>
         </div>
     </main>
 </body>

@@ -1,25 +1,26 @@
 ﻿@{
-    ViewBag.Title = "Sổ tiền gửi ngân hàng";
+    ViewBag.Title = "Sổ chi tiết tiền vay";
     Layout = "~/Views/Shared/_Layout.cshtml";
     System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
 }
-@using (Html.BeginForm("BaoCaoSoQuyTienGuiNganHang", "Home", FormMethod.Post, new { target = "_blank" }))
+@using (Html.BeginForm("BaoCaoSoTienChoVay", "Home", FormMethod.Post, new { target = "_blank" }))
 {
     <div class="card mb-4 m-2">
         <div class="card-header">
             <div class="d-flex align-content-center w-100">
-                <span class="fs-3 fw-bold">SỔ TIỀN GỬI NGÂN HÀNG</span>
-                <a href="@Url.Action("NgayBaoCaoSoTienGuiNganHang", "Home", new {name = "SoTienGuiNganHang"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+                <span class="fs-3 fw-bold">SỔ CHI TIẾT TIỀN VAY</span>
+                <a href="@Url.Action("NgayBaoCaoSoTienVay", "Home", new {name = "SoTienvay"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
             </div>
             <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
             <input id="@ViewBag.fromDate" type="text" hidden name="fromDate" value="@ViewBag.fromDate" />
             <input id="@ViewBag.toDate" type="text" hidden name="toDate" value="@ViewBag.toDate" />
-            <input id="@ViewBag.taikhoanid" type="text" hidden name="Id" value="@ViewBag.taikhoanid" />
+            <input id="@ViewBag.taikhoanid" type="text" hidden name="TkId" value="@ViewBag.taikhoanid" />
+            <input id="@ViewBag.khid" type="text" hidden name="KhId" value="@ViewBag.khid" />
         </div>
         <div class="card-body">
             <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
         </div>
-        <div class="card-body">
+        <div class="card-body overflow-scroll">
             <table class="table table-hover table-bordered">
                 <thead class="bg-info">
                     <tr>

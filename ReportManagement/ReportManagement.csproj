@@ -197,6 +197,8 @@
     <Compile Include="Kho.cs">
       <DependentUpon>Tamkhoa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KhachHangModel.cs" />
+    <Compile Include="Models\KH_TKModel.cs" />
     <Compile Include="Models\PhieuNhapModel.cs" />
     <Compile Include="Models\TaiKhoanModel.cs" />
     <Compile Include="NgoaiTe.cs">
@@ -393,7 +395,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\BaoCaoPhieuThu.cshtml" />
     <EntityDeploy Include="Tamkhoa.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Tamkhoa.Designer.cs</LastGenOutput>
@@ -403,34 +404,24 @@
     </Content>
     <Content Include="Views\Home\PhieuThuTienMat.cshtml" />
     <Content Include="Views\Home\PhieuChiTienMat.cshtml" />
-    <Content Include="Views\Home\BaoCaoPhieuChi.cshtml" />
     <Content Include="Views\Home\DanhMucKhachHang.cshtml" />
-    <Content Include="Views\Home\BaoCaoDanhMucKhachHang.cshtml" />
     <Content Include="Views\Home\PhieuNhap.cshtml" />
-    <Content Include="Views\Home\BaoCaoPhieuNhap.cshtml" />
     <Content Include="Views\Home\PhieuXuatKhoNoiBo.cshtml" />
-    <Content Include="Views\Home\BaoCaoPhieuXuatKho.cshtml" />
     <Content Include="Views\Home\DanhMucVatTu.cshtml" />
-    <Content Include="Views\Home\BaoCaoDanhMucVatTu.cshtml" />
     <Content Include="Views\Home\NgayBaoCao.cshtml" />
     <Content Include="Views\Home\NgayBaoCaoSoQuy.cshtml" />
     <Content Include="Views\Home\SoQuyTienMat.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoQuy.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoQuyTienMat.cshtml" />
     <Content Include="Views\Home\SoQuyTienMatTheoNgay.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoQuyTienMatTheoNgay.cshtml" />
     <Content Include="Views\Home\TongHopHangNhapMua.cshtml" />
     <Content Include="Views\Home\NgayBaoCaoTongHopHangNhapMua.cshtml" />
-    <Content Include="Views\Home\BaoCaoTongHopHangNhapMua.cshtml" />
     <Content Include="Views\Home\SoTienGuiNganHang.cshtml" />
     <Content Include="Views\Home\SoChiTietTaiKhoan.cshtml" />
     <Content Include="Views\Home\SoTongHopChuT.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoTongHopChuT.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoQuyTienGuiNganHang.cshtml" />
     <Content Include="Scripts\package.json" />
     <Content Include="Views\Home\NgayBaoCaoSoTienGuiNganHang.cshtml" />
-    <Content Include="Views\Home\BaoCaoSoChiTietMotTaiKhoan.cshtml" />
     <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Home\NgayBaoCaoSoTienVay.cshtml" />
+    <Content Include="Views\Home\SoTienVay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

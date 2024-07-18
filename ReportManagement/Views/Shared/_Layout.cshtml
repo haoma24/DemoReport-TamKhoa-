@@ -16,6 +16,7 @@
     <script src="~/Scripts/external/jquery/jquery.js"></script>
     <script src="~/Scripts/jquery-ui.min.js"></script>
     <script src="~/Scripts/colResizable-1.6.min.js"></script>
+    <script src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -36,12 +37,15 @@
                 headerOnly: false
             });
         });
+
     </script>
 </head>
 <body class="sb-nav-fixed e-bg-light h-100">
     <nav class="sb-topnav navbar navbar-expand e-navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3 text-light" href="@Url.Action("Index","Home")">Báo Cáo</a>
+        <a class="navbar-brand ps-3 text-light" href="@Url.Action("Index","Home")">
+            <img class="w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAQFACOj-pgIa93xjlpZD_UG7qrtsKXvzc1Q&s" />
+        </a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars text-light"></i></button>
         <!-- Navbar Search-->
@@ -65,8 +69,8 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion " id="sidenavAccordion">
-                <div class="sb-sidenav-menu e-bg-light">
+            <nav class="sb-sidenav accordion" id="sidenavAccordion">
+                <div class="sb-sidenav-menu e-bg-light ">
                     <div class="nav">
                         <!-- QuanLyTien-begin -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -99,6 +103,7 @@
                                         <a class="nav-link" href="@Url.Action("NgayBaoCaoSoTienGuiNganHang","Home", new {name = "SoTienGuiNganHang"})"><span class="e-list-text">Sổ tiền gửi ngân hàng</span></a>
                                         <a class="nav-link" href="@Url.Action("NgayBaoCaoSoQuy","Home", new {name = "SoChiTietTaiKhoan"})"><span class="e-list-text">Sổ chi tiết một tài khoản</span></a>
                                         <a class="nav-link" href="@Url.Action("NgayBaoCaoSoQuy","Home",new {name = "SoTongHopChuT"})"><span class="e-list-text">Sổ tổng hợp chữ T của một tài khoản</span></a>
+                                        <a class="nav-link" href="@Url.Action("NgayBaoCaoSoTienVay","Home",new {name = "SoTienVay"})"><span class="e-list-text">Sổ chi tiết tiền vay</span></a>
                                     </nav>
                                 </div>
                             </nav>
@@ -130,8 +135,11 @@
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth8" aria-labelledby="headingOne" @*data-bs-parent="#sidenavAccordionPages2"*@>
                                     <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("NgayBaoCaoTongHopHangNhapMua","Home",new {name = "TongHopHangNhapMua"})"><span class="e-list-text">Bảng kê phiếu nhập</span></a>
+                                        <a class="nav-link" href="@Url.Action("NgayBaoCaoTongHopHangNhapMua","Home",new {name = "TongHopHangNhapMua"})"><span class="e-list-text">Bảng kê hóa đơn dịch vụ</span></a>
                                         <a class="nav-link" href="@Url.Action("NgayBaoCaoTongHopHangNhapMua","Home",new {name = "TongHopHangNhapMua"})"><span class="e-list-text">Tổng hợp hàng nhập mua</span></a>
                                         <a class="nav-link" href="@Url.Action("NgayBaoCaoTongHopHangNhapMua","Home",new {name = "TongHopHangNhapMua"})"><span class="e-list-text">Báo cáo hàng nhập nhóm theo 2 chỉ tiêu</span></a>
+                                        <a class="nav-link" href="@Url.Action("NgayBaoCaoTongHopHangNhapMua","Home",new {name = "TongHopHangNhapMua"})"><span class="e-list-text">Sổ nhật ký mua hàng</span></a>
                                     </nav>
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth10" aria-expanded="false" aria-controls="pagesCollapseAuth10">
@@ -235,7 +243,7 @@
             </div>
         </div>*@
         <div id="layoutSidenav_content">
-            <main class="contentContainer">
+            <main class="contentContainer p-2">
                 @RenderBody()
             </main>
         </div>

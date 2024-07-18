@@ -57,7 +57,7 @@ namespace ReportManagement.Controllers
         }
 
         //VIEW BAO CAO - BEGIN
-        //Phieu thu
+        //BCPT
         public ActionResult BaoCaoPhieuThu(string[] list) 
         {
             string _id = "";
@@ -80,7 +80,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "PhieuThuTienMat";
             return View("~/Views/Report/Index.cshtml");
         }
-        //Phieu chi
+        //BCPC
         public ActionResult BaoCaoPhieuChi(string[] list)
         {
             string _id = "";
@@ -104,7 +104,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "PhieuChiTienMat";
             return View("~/Views/Report/Index.cshtml");
         }
-        //Khach hang
+        //BCDMKH
         public ActionResult BaoCaoDanhMucKhachHang(string[] list)
         {
             string _id = "";
@@ -125,7 +125,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "DanhMucKhachHang";
             return View("~/Views/Report/Index.cshtml");
         }
-        //Phieu nhap
+        //BCPN
         public ActionResult BaoCaoPhieuNhap(string[] list)
         {
             string _id = "";
@@ -149,7 +149,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "PhieuNhap";
             return View("~/Views/Report/Index.cshtml");
         }
-        //Phieu xuat
+        //BCPXK
         public ActionResult BaoCaoPhieuXuatKho(string[] list)
         {
             string _id = "";
@@ -173,7 +173,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "PhieuXuatKhoNoiBo";
             return View("~/Views/Report/Index.cshtml");
         }
-        //Vat tu
+        //BCDMVT
         public ActionResult BaoCaoDanhMucVatTu(string[] list)
         {
             string _id = "";
@@ -194,6 +194,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "DanhMucVatTu";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSQ
         public ActionResult BaoCaoSoQuy(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
@@ -210,11 +211,12 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoQuyTienMat";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSTQGNH
         public ActionResult BaoCaoSoQuyTienGuiNganHang(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
             var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null).ToString("MM/dd/yyyy");
-            string _id = form["taikhoanid"];
+            string _id = form["Id"];
 
             reportViewer.ServerReport.ReportPath = "/DemoReport/SoQuyTienMat";
             ReportParameter[] parameters = new ReportParameter[3];
@@ -226,6 +228,26 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoTienGuiNganHang";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSTCV
+        public ActionResult BaoCaoSoTienChoVay(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _TkId = form["TkId"];
+            string _KhId = form["KhId"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoChiTietTienVay";
+            ReportParameter[] parameters = new ReportParameter[4];
+            parameters[0] = new ReportParameter("TaiKhoan_id", _TkId, true);
+            parameters[1] = new ReportParameter("TuNgay", tungay, true);
+            parameters[2] = new ReportParameter("DenNgay", denngay, true);
+            parameters[3] = new ReportParameter("KhachHang_id", _KhId, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoTienVay";
+            return View("~/Views/Report/Index.cshtml");
+        }
+        //BCSQTM
         public ActionResult BaoCaoSoQuyTienMat(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
@@ -242,6 +264,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoQuyTienMatTheoNgay";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSTHCT
         public ActionResult BaoCaoSoTongHopChuT(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
@@ -258,6 +281,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoTongHopChuT";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSCTMTK
         public ActionResult BaoCaoSoChiTietMotTaiKhoan(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
@@ -274,6 +298,7 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoChiTietTaiKhoan";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCTHHNM
         public ActionResult BaoCaoTongHopHangNhapMua(FormCollection form)
         {
             var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("dd/MM/yyyy");
@@ -292,7 +317,7 @@ namespace ReportManagement.Controllers
         }
         //VIEW BAO CAO - END
 
-        //Contrller chon ngay
+        //NBC
         public ActionResult NgayBaoCao(string name)
         {
             if (name == "" || name == null || name.Contains(" "))
@@ -303,6 +328,7 @@ namespace ReportManagement.Controllers
             ViewBag.viewName = name;
             return View();
         }
+        //NBCSQ
         public ActionResult NgayBaoCaoSoQuy(string name)
         {
             var tk = db.TaiKhoan.OrderBy(x => x.Id);
@@ -327,8 +353,10 @@ namespace ReportManagement.Controllers
                 ViewBag.viewName = name;
             return View();
         }
+        //NBCSTGNH
         public ActionResult NgayBaoCaoSoTienGuiNganHang(string name)
         {
+            //Return list TaikhoanUd and fetch to dropdownlist
             var tk = db.TaiKhoan.OrderBy(x => x.Id);
             List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
             foreach (var item in tk.Where(x => x.Id == 5 || x.TaiKhoanParentId == 5))
@@ -340,9 +368,44 @@ namespace ReportManagement.Controllers
                 };
                 listTaiKhoan.Add(listItem);
             };
-
-
+            if (name == "" || name == null || name.Contains(" "))
+            {
+                ViewBag.viewName = (string)Session["ViewName"];
+            }
+            else
+                ViewBag.viewName = name;
+            return View();
+        }
+        //NBCSCTTV
+        public ActionResult NgayBaoCaoSoTienVay(string name)
+        {
+            var tk = db.TaiKhoan.OrderBy(x => x.Id);
+            List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
+            foreach (var item in tk.Where(x => x.Id == 139 || x.TaiKhoanParentId == 139))
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.TaiKhoanUd,
+                    Text = item.TaiKhoanUd
+                };
+                listTaiKhoan.Add(listItem);
+            };
             ViewData["TaiKhoanId"] = listTaiKhoan;
+
+            //Return list KhachHangNm and fetch to dropdownlist
+            var kh = db.KhachHang.OrderBy(x => x.Id);
+            List<SelectListItem> listKhachHang = new List<SelectListItem>();
+            foreach (var item in kh)
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.KhachHangUd,
+                    Text = item.KhachHangUd
+                };
+                listKhachHang.Add(listItem);
+            };
+            ViewData["KhachHangId"] = listKhachHang;
+
             if (name == "" || name == null || name.Contains(" "))
             {
                 ViewBag.viewName = (string)Session["ViewName"];
@@ -378,7 +441,7 @@ namespace ReportManagement.Controllers
         }
 
         //VIEW DANH SACH - BEGIN
-        //Phieu thu
+        //PTTM
         public ActionResult PhieuThuTienMat(FormCollection form)
         {
             DateTime fromDate = DateTime.Now;
@@ -415,6 +478,7 @@ namespace ReportManagement.Controllers
             var pt = db.PhieuThu.OrderBy(x => x.Id).Where(x => x.NgayLap > fromDate && x.NgayLap < toDate);
             return View(pt.Take(10).ToList());
         }
+        //PCTM
         public ActionResult PhieuChiTienMat(FormCollection form)
         {
             DateTime fromDate = DateTime.Now;
@@ -451,7 +515,7 @@ namespace ReportManagement.Controllers
             var pt = db.PhieuChi.OrderBy(x => x.Id).Where(x => x.NgayLap > fromDate && x.NgayLap < toDate);
             return View(pt.Take(10).ToList());
         }
-        //So quy tien mat
+        //SQTM
         public ActionResult SoQuyTienMat(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
@@ -501,7 +565,7 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //So quy tien mat theo ngay
+        //SQTMTN
         public ActionResult SoQuyTienMatTheoNgay(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
@@ -550,7 +614,7 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //So tien gui ngan hang
+        //STGNH
         public ActionResult SoTienGuiNganHang(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
@@ -595,6 +659,65 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec SoQuyTienMat @taikhoan_id = "+taikhoanid+", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View();
+        }
+        //SCTTV
+        public ActionResult SoTienVay(FormCollection form, KH_TKModel model)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            int taikhoanud = 111;
+            int taikhoanid = 350;
+            int khid = 1549;
+            string khud = "BORO";
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                taikhoanud = int.Parse(model.TaiKhoanModel.Id);
+                khud = model.KHachHangModel.Id;
+                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
+                string sql2 = "select khachhang_id from KhachHang where KhachHang_ud = '" + khud + "'";
+                DataTable tempdt = knA00.ExecuteQuery(sql, null);
+                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                DataTable tempdt2 = knA00.ExecuteQuery(sql2, null);
+                khid = tempdt2.Rows[0].Field<int>(0);
+                ViewBag.khid = khid;
+                ViewBag.khud = khud;
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.taiKhoanUd = taikhoanud;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                taikhoanid = (int)Session["TaiKhoanId"];
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.khid = khid;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            //Neu duoc goi lan dau thi chuyen den NgayBaoCao
+            if (form["fromDate"] == null || form["toDate"] == null)
+            {
+                Session["ViewName"] = "SoTienGuiNganHang";
+                return RedirectToAction("NgayBaoCaoSoQuy", "Home");
+            }
+
+        kt: Session["KhachHangId"] = khid;
+            Session["TaiKhoanId"] = taikhoanid;
+            Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+
+            string sqlQuery = "exec SoQuyTienMat @taikhoan_id = " + taikhoanid + ", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
             DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
@@ -766,6 +889,15 @@ namespace ReportManagement.Controllers
             if (item != null)
             {
                 return Json(new { name = item.TaiKhoanNm }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { name = "Không tìm thấy" }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetKHName(string id)
+        {
+            var item = db.KhachHang.FirstOrDefault(i => i.KhachHangUd == id);
+            if (item != null)
+            {
+                return Json(new { name = item.KhachHangNm }, JsonRequestBehavior.AllowGet);
             }
             return Json(new { name = "Không tìm thấy" }, JsonRequestBehavior.AllowGet);
         }

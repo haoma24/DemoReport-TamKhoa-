@@ -49,6 +49,7 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <Report Include="BangKePhieuNhap.rdl" />
     <Report Include="BaoCaoDT.rdl" />
     <Report Include="BaoCaoHangNhapNhomTheo2ChiTiet.rdl" />
     <Report Include="DanhMucKhachHang.rdl" />
@@ -58,6 +59,7 @@
     <Report Include="PhieuThuTienMat.rdl" />
     <Report Include="PhieuXuatNoiBo.rdl" />
     <Report Include="SoChiTietMotTaiKhoan.rdl" />
+    <Report Include="SoChiTietTienVay.rdl" />
     <Report Include="SoQuyTienMat.rdl" />
     <Report Include="SoQuyTienMatTheoNgay.rdl" />
     <Report Include="SoTongHopChuT.rdl" />
