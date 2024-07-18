@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Bảng kê hóa đơn dịch vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
+}
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
+@using (Html.BeginForm("BaoCaoBangKeHDDV", "Home", FormMethod.Post, new { target = "_blank" }))
+{
+    <div class="card mb-4 m-2">
+        <div class="card-header">
+            <div class="d-flex align-content-center w-100">
+                <span class="fs-3 fw-bold">BẢNG KÊ PHIẾU NHẬP</span>
+                <a href="@Url.Action("NgayBaoCaoTongHopHangNhapMua", "Home", new {name = "BangKePhieuNhap"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+            </div>
+            <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
+            <input id="@ViewBag.fromDate" type="text" hidden name="fromDate" value="@ViewBag.fromDate" />
+            <input id="@ViewBag.toDate" type="text" hidden name="toDate" value="@ViewBag.toDate" />
+        </div>
+        <div class="card-body">
+            <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
+        </div>
+        <div class="card-body overflow-scroll">
+            <table class="table table-hover table-bordered">
+                <thead class="bg-info">
+                    <tr>
+                        <th>Mã ct</th>
+                        <th>Ngày ct</th>
+                        <th>Số ct</th>
+                        <th>Ngày hđ</th>
+                        <th>Số hđ</th>
+                        <th>Mã khách</th>
+                        <th>Tên khách</th>
+                        <th>Mã nx</th>
+                        <th>Diễn giả</th>
+                        <th>Tiền</th>
+                        <th>Thuế</th>
+                        <th>Tổng tiền</th>
+                        <th>Mã vụ việc</th>
+                        <th>Mã phí</th>
+                        <th>Ký hiệu hđ</th>
+                        <th>Thuế suất</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (System.Data.DataRow row in dt.Rows)
+                    {
+                        <tr style="padding-left: 2px">
+                            <td class="e-ellipsis-100">@row["loaiphieu"]</td>
+                            <td class="e-ellipsis-100">@Convert.ToDateTime(row["Ngaylap"]).ToString("dd/MM/yyyy")</td>
+                            <td class="e-ellipsis-100">@row["Sopn"]</td>
+                            <td class="e-ellipsis-100">@Convert.ToDateTime(row["Ngayhd"]).ToString("dd/MM/yyyy")</td>
+                            <td class="e-ellipsis-100">@row["Sohd"]</td>
+                            <td class="e-ellipsis-100">@row["khachhang_ud"]</td>
+                            <td class="e-ellipsis-100">@row["khachhang_nm"]</td>
+                            <td class="e-ellipsis-100">@row["GhiCoTk_Ud"]</td>
+                            <td class="e-ellipsis-100">@row["DienGiai"]</td>
+                            <td class="e-ellipsis-100">@row["TienHangVND"]</td>
+                            <td class="e-ellipsis-100">@row["ThueVatVND"]</td>
+                            <td class="e-ellipsis-100">@row["TongTienVND"]</td>
+                            <td class="e-ellipsis-100">@row["Vuviec_ud"]</td>
+                            <td class="e-ellipsis-100">@row["Maphi_ud"]</td>
+                            <td class="e-ellipsis-100">@row["SoSeri"]</td>
+                            <td class="e-ellipsis-100">@row["ThueSuat"]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+}
+

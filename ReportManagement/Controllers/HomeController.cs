@@ -247,6 +247,39 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoTienVay";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCBKPN
+        public ActionResult BaoCaoBangKePhieuNhap(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/BangKePhieuNhap";
+            ReportParameter[] parameters = new ReportParameter[2];
+            parameters[0] = new ReportParameter("TuNgay", tungay, true);
+            parameters[1] = new ReportParameter("DenNgay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "BangKePhieuNhap";
+            return View("~/Views/Report/Index.cshtml");
+        }
+        //BCBKHDDV
+        public ActionResult BaoCaoBangKeHDDV(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/BangKeHoaDonMuaHangVaDichVu";
+            ReportParameter[] parameters = new ReportParameter[2];
+            parameters[0] = new ReportParameter("TuNgay", tungay, true);
+            parameters[1] = new ReportParameter("DenNgay", denngay, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "BangKeHDDV";
+            return View("~/Views/Report/Index.cshtml");
+        }
+        
         //BCSQTM
         public ActionResult BaoCaoSoQuyTienMat(FormCollection form)
         {
@@ -722,7 +755,77 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //So chi tiet cua mot tai khoan
+        //BKPN
+        public ActionResult BangKePhieuNhap(FormCollection form)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            ////Neu duoc goi lan dau thi chuyen den NgayBaoCao
+            //if (form["fromDate"] == null || form["toDate"] == null)
+            //{
+            //    Session["ViewName"] = "SoTienGuiNganHang";
+            //    return RedirectToAction("NgayBaoCaoSoQuy", "Home");
+            //}
+
+        kt: Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+
+            string sqlQuery = "exec BangKePhieuNhapPreview @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View();
+        }
+        //BKHDDV
+        public ActionResult BangKeHDDV(FormCollection form)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+
+        kt: Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+
+            string sqlQuery = "exec BangKeHoaDonMuaHangPreview @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View();
+        }
+        //SCTMTK
         public ActionResult SoChiTietTaiKhoan(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;

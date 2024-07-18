@@ -422,6 +422,8 @@
     <Content Include="Views\Report\Index.cshtml" />
     <Content Include="Views\Home\NgayBaoCaoSoTienVay.cshtml" />
     <Content Include="Views\Home\SoTienVay.cshtml" />
+    <Content Include="Views\Home\BangKePhieuNhap.cshtml" />
+    <Content Include="Views\Home\BangKeHDDV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

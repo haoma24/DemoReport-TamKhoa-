@@ -49,6 +49,10 @@
     <Reports>@(Report)</Reports>
   </PropertyGroup>
   <ItemGroup>
+    <DataSource Include="A0000000.rds" />
+  </ItemGroup>
+  <ItemGroup>
+    <Report Include="BangKeHoaDonMuaHangVaDichVu.rdl" />
     <Report Include="BangKePhieuNhap.rdl" />
     <Report Include="BaoCaoDT.rdl" />
     <Report Include="BaoCaoHangNhapNhomTheo2ChiTiet.rdl" />

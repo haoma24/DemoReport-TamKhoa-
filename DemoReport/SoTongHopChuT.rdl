@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:22:35.9509630Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-18T06:29:41.0299559Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1064,7 +1064,6 @@
                 </Style>
               </Tablix>
             </ReportItems>
-            <KeepTogether>true</KeepTogether>
             <Top>0.34326cm</Top>
             <Left>0.18067cm</Left>
             <Height>14.2473cm</Height>

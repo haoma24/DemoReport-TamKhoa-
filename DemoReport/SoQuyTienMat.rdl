@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:19:00.1392391Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-18T06:29:27.0518825Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1626,7 +1626,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <DataSetName>SoQuyTienMat</DataSetName>
                 <Top>4.14608cm</Top>
                 <Height>3.28515cm</Height>
-                <Width>21.92874cm</Width>
+                <Width>21.92876cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -2123,11 +2123,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Style>
               </Textbox>
             </ReportItems>
-            <KeepTogether>true</KeepTogether>
             <Top>0.60579cm</Top>
             <Left>0.61019cm</Left>
             <Height>13.49053cm</Height>
-            <Width>21.92874cm</Width>
+            <Width>21.92876cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:20:30.7731190Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-18T06:29:34.3803995Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1849,7 +1849,6 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Style>
               </Textbox>
             </ReportItems>
-            <KeepTogether>true</KeepTogether>
             <Top>0.87913cm</Top>
             <Left>0.81406cm</Left>
             <Height>13.95624cm</Height>

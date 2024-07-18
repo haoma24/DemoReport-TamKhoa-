@@ -36,7 +36,7 @@
                 @foreach (var pt in Model)
                 {
                     <tr>
-                        <td class="e-ellipsis-100 text-center"><input id="@pt.Id" type="checkbox" name="list" value="@pt.Id" /></td>
+                        <td class="e-ellipsis-100 text-center" ><input id="@pt.Id" type="checkbox" name="list" value="@pt.Id" /></td>
                         <td class="e-ellipsis-100">@Convert.ToDateTime(pt.NgayLap).ToString("dd/MM/yyyy")</td>
                         <td class="e-ellipsis-100">@Html.DisplayFor(Model => pt.SoPhieu)</td>
                         <td class="e-ellipsis-100">@Html.DisplayFor(Model => pt.DienGiai)</td>
