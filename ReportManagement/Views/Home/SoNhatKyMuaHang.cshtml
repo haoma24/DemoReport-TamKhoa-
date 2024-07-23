@@ -1,58 +1,66 @@
 ﻿@{
-    ViewBag.Title = "Bảng kê phiếu nhập";
+    ViewBag.Title = "Tổng hợp hàng nhập mua";
     Layout = "~/Views/Shared/_Layout.cshtml";
     System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
 }
-@using (Html.BeginForm("BaoCaoBangKePhieuNhap", "Home", FormMethod.Post, new { target = "_blank" }))
+@using (Html.BeginForm("BaoCaoSoNhatKyMuaHang", "Home", FormMethod.Post, new { target = "_blank" }))
 {
     <div class="card mb-4 m-2">
         <div class="card-header">
             <div class="d-flex align-content-center w-100">
-                <span class="fs-3 fw-bold">BẢNG KÊ PHIẾU NHẬP</span>
-                <a href="@Url.Action("NgayBaoCaoTongHopHangNhapMua", "Home", new {name = "BangKePhieuNhap"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
+                <span class="fs-3 fw-bold">SỔ NHẬT KÝ MUA HÀNG</span>
+                <a href="@Url.Action("NgayBaoCaoSoNhatKyMuaHang","Home",new {name = "SoNhatKyMuaHang"})" class="ms-auto"><i class="fa-solid fa-xmark "></i></a>
             </div>
             <div><span class="fs-5 ms-1">Từ ngày @ViewBag.fromDate đến ngày @ViewBag.toDate</span></div>
             <input id="@ViewBag.fromDate" type="text" hidden name="fromDate" value="@ViewBag.fromDate" />
             <input id="@ViewBag.toDate" type="text" hidden name="toDate" value="@ViewBag.toDate" />
+            <input id="@ViewBag.TkNo" type="text" hidden name="TkNo" value="@ViewBag.TkNo" />
+            <input id="@ViewBag.TkCo" type="text" hidden name="TkCo" value="@ViewBag.TkCo" />
         </div>
         <div class="card-body">
             <button type="submit" class="btn btn-outline-info"> <i class="fa-solid fa-print fa-lg"></i> In</button>
         </div>
-        <div class="card-body overflow-scroll">
-            <table class="table table-hover table-bordered">
+        <div class="card-body table-responsive">
+            <table id="resizeMe" class="table table-hover table-bordered">
                 <thead class="bg-info">
-                    <tr>
+                    <tr id="header-row">
+                        @*<th>@Html.CheckBox("ID")</th>*@
+
                         <th>Mã ct</th>
                         <th>Ngày ct</th>
                         <th>Số ct</th>
-                        <th>Số hđ</th>
-                        <th>Ngày hđ</th>
                         <th>Mã khách</th>
                         <th>Tên khách</th>
-                        <th>Mã nx</th>
-                        <th>Số lượng</th>
-                        <th>Tiền hàng</th>
                         <th>Diễn giải</th>
-                        <th>Hạn tt</th>
+                        <th>Tk nợ</th>
+                        <th>Tk có</th>
+                        <th>Tiền</th>
+                        <th>Mã vv</th>
+                        <th>Tên tk nợ</th>
+                        <th>Tên tk có</th>
+                        <th>Tên vv</th>
+                        <th>Mã phí</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (System.Data.DataRow row in dt.Rows)
                     {
-                        <tr style="padding-left: 2px">
-                            <td class="e-ellipsis-100">@row["loaiphieu"]</td>
+                        <tr>
+                            <td class="e-ellipsis-100">@row["Mact"]</td>
                             <td class="e-ellipsis-100">@Convert.ToDateTime(row["Ngaylap"]).ToString("dd/MM/yyyy")</td>
-                            <td class="e-ellipsis-100">@row["Sopn"]</td>
-                            <td class="e-ellipsis-100">@row["Sohd"]</td>
-                            <td class="e-ellipsis-100">@Convert.ToDateTime(row["Ngaylap"]).ToString("dd/MM/yyyy")</td>
-                            <td class="e-ellipsis-100">@row["khachhang_ud"]</td>
-                            <td class="e-ellipsis-100">@row["khachhang_nm"]</td>
-                            <td class="e-ellipsis-100">@row["GhiCoTk_Ud"]</td>
-                            <td class="e-ellipsis-100">@row["SoLuong"]</td>
-                            <td class="e-ellipsis-100">@row["TienHangVND"]</td>
+                            <td class="e-ellipsis-100">@row["Soct"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhang_ud"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhang_nm"]</td>
                             <td class="e-ellipsis-100">@row["DienGiai"]</td>
-                            <td class="e-ellipsis-100">@row["HanTT"]</td>
-                            
+                            <td class="e-ellipsis-100">@row["TkNo"]</td>
+                            <td class="e-ellipsis-100">@row["TkCo"]</td>
+                            <td class="e-ellipsis-100">@row["TienVND"]</td>
+                            <td class="e-ellipsis-100">@row["Vuviec_ud"]</td>
+                            <td class="e-ellipsis-100">@row["TkNo_nm"]</td>
+                            <td class="e-ellipsis-100">@row["TkCo_nm"]</td>
+                            <td class="e-ellipsis-100">@row["Vuviec_nm"]</td>
+                            <td class="e-ellipsis-100">@row["Maphi_ud"]</td>
                         </tr>
                     }
                 </tbody>
@@ -78,4 +86,3 @@
 
     </div>
 }
-

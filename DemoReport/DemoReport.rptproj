@@ -64,6 +64,7 @@
     <Report Include="PhieuXuatNoiBo.rdl" />
     <Report Include="SoChiTietMotTaiKhoan.rdl" />
     <Report Include="SoChiTietTienVay.rdl" />
+    <Report Include="SoNhatKyMuaHang.rdl" />
     <Report Include="SoQuyTienMat.rdl" />
     <Report Include="SoQuyTienMatTheoNgay.rdl" />
     <Report Include="SoTongHopChuT.rdl" />

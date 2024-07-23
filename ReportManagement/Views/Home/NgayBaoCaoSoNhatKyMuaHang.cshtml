@@ -1,4 +1,4 @@
-﻿@model ReportManagement.Models.TaiKhoanModel
+﻿
 @{
     ViewBag.Title = ViewBag.viewName;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -53,9 +53,6 @@
         #datepicker2 > span:hover {
             cursor: pointer;
         }
-    .form-control {
-        width: 180px;
-    }
 </style>
 <script>
     var d = new Date();
@@ -104,6 +101,77 @@
             });
     });
     $(document).ready(function () {
+
+        $('.single-char-1234-only').on('keypress', function (e) {
+            var allowedChars = '1234'; // Chỉ cho phép các ký tự 1, 2, 3
+            var char = String.fromCharCode(e.which);
+
+            // Kiểm tra xem ký tự nhập vào có phải là 1 trong các ký tự được phép không
+            if (allowedChars.indexOf(char) === -1) {
+                e.preventDefault();
+                return;
+            }
+
+            // Ngăn không cho nhập nếu đã có một ký tự
+            if ($(this).val().length >= 1) {
+                e.preventDefault();
+                $(this).val(char); // Thay thế ký tự cũ bằng ký tự mới
+            }
+
+        });
+
+        // Đảm bảo chỉ dán một ký tự và ký tự đó là 1, 2, hoặc 3
+        $('.single-char-1234-only').on('input', function () {
+            var val = $(this).val();
+            var allowedChars = '1234'; // Chỉ cho phép các ký tự 1, 2, 3
+
+            // Loại bỏ các ký tự không được phép và chỉ giữ lại ký tự cuối cùng nếu nó hợp lệ
+            if (val.length > 1 || allowedChars.indexOf(val) === -1) {
+                var lastChar = val.slice(-1);
+                if (allowedChars.indexOf(lastChar) !== -1) {
+                    $(this).val(lastChar); // Giữ lại ký tự hợp lệ cuối cùng
+
+                } else {
+                    $(this).val(''); // Xóa tất cả nếu không hợp lệ
+                }
+
+            }
+        });
+
+        $('.single-char-12-only').on('keypress', function (e) {
+            var allowedChars = '12'; // Chỉ cho phép các ký tự 1, 2, 3
+            var char = String.fromCharCode(e.which);
+
+            // Kiểm tra xem ký tự nhập vào có phải là 1 trong các ký tự được phép không
+            if (allowedChars.indexOf(char) === -1) {
+                e.preventDefault();
+                return;
+            }
+
+            // Ngăn không cho nhập nếu đã có một ký tự
+            if ($(this).val().length >= 1) {
+                e.preventDefault();
+                $(this).val(char); // Thay thế ký tự cũ bằng ký tự mới
+            }
+        });
+
+        // Đảm bảo chỉ dán một ký tự và ký tự đó là 1, 2, hoặc 3
+        $('.single-char-12-only').on('input', function () {
+            var val = $(this).val();
+            var allowedChars = '12'; // Chỉ cho phép các ký tự 1, 2, 3
+
+            // Loại bỏ các ký tự không được phép và chỉ giữ lại ký tự cuối cùng nếu nó hợp lệ
+            if (val.length > 1 || allowedChars.indexOf(val) === -1) {
+                var lastChar = val.slice(-1);
+                if (allowedChars.indexOf(lastChar) !== -1) {
+                    $(this).val(lastChar); // Giữ lại ký tự hợp lệ cuối cùng
+                } else {
+                    $(this).val(''); // Xóa tất cả nếu không hợp lệ
+                }
+            }
+
+        });
+
         $('.single-char-123-only').on('keypress', function (e) {
             var allowedChars = '123'; // Chỉ cho phép các ký tự 1, 2, 3
             var char = String.fromCharCode(e.which);
@@ -136,13 +204,13 @@
                 }
             }
         });
-    }); 
+    });
 </script>
 @{ string controllerName = ViewBag.viewName;}
 @using (Html.BeginForm(controllerName, "Home", FormMethod.Post))
 {
     <div class="modal fade" id="datetimeModal" tabindex="-1" aria-labelledby="datetimeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center e-bg-light">
                     <h5 class="modal-title text-center w-100" id="datetimeModalLabel">@ViewBag.viewName</h5>
@@ -150,31 +218,29 @@
                 </div>
                 <div class="modal-body ">
                     <div class="d-flex align-items-center mb-3">
-                        <label class="control-label col-2">Từ:</label>
+                        <label class="control-label col-4">Từ:</label>
                         <div id="datepicker" class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
                             @Html.TextBox("fromDate", null, new { @class = "form-control form-control-sm", placeholder = "Ngày bắt đầu" })
-                            <span class="input-group-addon btn btn-sm btn-outline-secondary"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="input-group-addon btn btn-outline-secondary"><i class="fa-solid fa-calendar-days"></i></span>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3 align-content-center">
-                        <label class="control-label col-2">Đến:</label>
+                        <label class="control-label col-4">Đến:</label>
                         <div id="datepicker2" class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
                             @Html.TextBox("toDate", null, new { @class = "form-control form-control-sm", placeholder = "Ngày kết thúc" })
-                            <span class="input-group-addon ms-0 btn btn-sm btn-outline-secondary"><i class="fa-solid fa-calendar-days "></i></span>
+                            <span class="input-group-addon ms-0 btn btn-outline-secondary"><i class="fa-solid fa-calendar-days "></i></span>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3 align-content-center">
-                        <label class="control-label col-2">Loại phiếu nhập</label>
-                        <div class="d-flex w-100">
-                            @Html.TextBox("LoaiPn", null, new { @class = "form-control-sm form-control single-char-12-only", maxlenght = "1" })
-                            <label class="control-label col">1 - Nhập mua; 2 - Nhập khẩu; 3 - Nhập chi phí</label>
+                        <label class="control-label col-4">Tài khoản nợ:</label>
+                        <div class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
+                            @Html.TextBox("TkNo", null, new { @class = "form-control form-control-sm", placeholder = "Tài khoản nợ" })
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3 align-content-center">
-                        <label class="control-label col-2">Mẫu báo cáo</label>
-                        <div class="col-md-10 d-flex">
-                            @Html.TextBox("MauBc", null, new { @class = "form-control-sm form-control single-char-123-only", maxlenght = "1" })
-                            <label class="control-label col">1 - Mẫu thường; 2 - Mẫu nhập mua; 3 - Mẫu nhập khẩu</label>
+                        <label class="control-label col-4">Tài khoản có:</label>
+                        <div class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
+                            @Html.TextBox("TkCo", null, new { @class = "form-control form-control-sm", placeholder = "Tài khoản có" })
                         </div>
                     </div>
                 </div>

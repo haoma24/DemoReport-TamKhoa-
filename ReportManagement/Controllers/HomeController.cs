@@ -11,6 +11,8 @@ using System.Web.UI.WebControls;
 using Microsoft.Reporting.WebForms;
 using System.Configuration;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
+using System.Web.UI;
 namespace ReportManagement.Controllers
 {
     public class ReportViewerInitializer
@@ -279,7 +281,41 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "BangKeHDDV";
             return View("~/Views/Report/Index.cshtml");
         }
-        
+        //BCBKHDDV
+        public ActionResult BaoCaoHangNhap2CT(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("dd/MM/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("dd/MM/yyyy");
+
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/BaoCaoHangNhapNhomTheo2ChiTiet";
+            ReportParameter[] parameters = new ReportParameter[3];
+            parameters[0] = new ReportParameter("tungay", tungay, true);
+            parameters[1] = new ReportParameter("denngay", denngay, true);
+            parameters[2] = new ReportParameter("LoaiBC", "4", true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "BangKeHDDV";
+            return View("~/Views/Report/Index.cshtml");
+        }
+        //BCSNKMH
+        public ActionResult BaoCaoSoNhatKyMuaHang(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var tkno = form["TkNo"];
+            var tkco = form["TkCo"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoNhatKyMuaHang";
+            ReportParameter[] parameters = new ReportParameter[4];
+            parameters[0] = new ReportParameter("TuNgay", tungay, true);
+            parameters[1] = new ReportParameter("DenNgay", denngay, true);
+            parameters[2] = new ReportParameter("TkNo", tkno, true);
+            parameters[3] = new ReportParameter("TkCo", tkco, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            return View("~/Views/Report/Index.cshtml");
+        }
         //BCSQTM
         public ActionResult BaoCaoSoQuyTienMat(FormCollection form)
         {
@@ -401,6 +437,7 @@ namespace ReportManagement.Controllers
                 };
                 listTaiKhoan.Add(listItem);
             };
+            ViewData["TaiKhoanId"] = listTaiKhoan;
             if (name == "" || name == null || name.Contains(" "))
             {
                 ViewBag.viewName = (string)Session["ViewName"];
@@ -463,6 +500,28 @@ namespace ReportManagement.Controllers
 
 
             ViewData["TaiKhoanId"] = listTaiKhoan;
+            if (name == "" || name == null || name.Contains(" "))
+            {
+                ViewBag.viewName = (string)Session["ViewName"];
+            }
+            else
+                ViewBag.viewName = name;
+
+            return View();
+        }
+        public ActionResult NgayBaoCaoHangNhap2CT(string name)
+        {
+            if (name == "" || name == null || name.Contains(" "))
+            {
+                ViewBag.viewName = (string)Session["ViewName"];
+            }
+            else
+                ViewBag.viewName = name;
+
+            return View();
+        }
+        public ActionResult NgayBaoCaoSoNhatKyMuaHang(string name)
+        {
             if (name == "" || name == null || name.Contains(" "))
             {
                 ViewBag.viewName = (string)Session["ViewName"];
@@ -825,6 +884,94 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
+        //HNN2CT
+        public ActionResult HangNhapNhom2CT(FormCollection form)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            string LoaiPn = "";
+            string MauBc = "";
+            string nhomTheo = "";
+            string ctTheo = "";
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                LoaiPn = form["LoaiPn"];
+                MauBc = form["MauBc"];
+                nhomTheo = form["nhomTheo"];
+                ctTheo = form["ctTheo"];
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+
+        kt: Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+
+            string sqlQuery = "exec BaoCaoHangNhapNhomCtPreview @LoaiBC=4, @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View();
+        }
+        //SNKMH
+        public ActionResult SoNhatKyMuaHang(FormCollection form)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            string TkNo = "";
+            string TkCo = "";
+            string tkNo_id = "";
+            string tkCo_id = "";
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                TkNo = form["TkNo"];
+                TkCo = form["TkCo"];
+                
+                tkNo_id = dsTkId(TkNo);
+                tkCo_id = dsTkId(TkCo);
+                ViewBag.TkNo = tkNo_id;
+                ViewBag.TkCo = tkCo_id;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                tkCo_id = (string)Session["TkCo"];
+                tkNo_id = (string)Session["TkNo"];
+                ViewBag.TkNo = tkNo_id;
+                ViewBag.TkCo = tkCo_id;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+
+        kt: Session["TkNo"] = tkNo_id;
+            Session["TkCo"] = tkCo_id;
+            Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+            string sqlQuery = "exec SoNhatKyMuaHangPreview @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "', @TkNo= '"+tkNo_id+"', @TkCo = '"+tkCo_id+"'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View();
+        }
         //SCTMTK
         public ActionResult SoChiTietTaiKhoan(FormCollection form, TaiKhoanModel taiKhoan)
         {
@@ -1092,5 +1239,27 @@ namespace ReportManagement.Controllers
             return View(vt.Take(10).ToList());
         }
         //VIEW DANH SACH - END
+        public string dsTkId(string Tk_ud)
+        {
+            string Tk_id = "";
+            List<string> ds = Tk_ud.Split(',').ToList();
+            ds.RemoveAll(x => x == "");
+            List<string> ds_id = new List<string>();
+            for (int i = 0; i < ds.Count; i++)
+            {
+                ds[i] = ds[i].Trim();
+                SqlParameter[] taikhoan_udPara = new SqlParameter[1];
+                taikhoan_udPara[0] = new SqlParameter("taikhoan_ud", ds[i]);
+                DataTable dt = knA00.ExecuteQuery("Select taikhoan_id from taikhoan where taikhoan_id = (select taikhoan_id from taikhoan where taikhoan_ud= @taikhoan_ud)" +
+                    "or taikhoanparent_id = (select taikhoan_id from taikhoan where taikhoan_ud= @taikhoan_ud)", taikhoan_udPara);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    ds_id.Add(dr["taikhoan_id"].ToString());
+                }
+            }
+
+            Tk_id = String.Join(",", ds_id);
+            return Tk_id;
+        }
     }
 }

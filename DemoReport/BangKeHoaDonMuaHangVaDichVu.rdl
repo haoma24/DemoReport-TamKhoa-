@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-18T09:26:59.7174728Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-22T06:49:23.9077972Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -2058,6 +2058,7 @@
         </Values>
       </DefaultValue>
       <Prompt>Tu Ngay</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="DenNgay">
       <DataType>String</DataType>
@@ -2067,6 +2068,7 @@
         </Values>
       </DefaultValue>
       <Prompt>Den Ngay</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

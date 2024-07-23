@@ -424,6 +424,10 @@
     <Content Include="Views\Home\SoTienVay.cshtml" />
     <Content Include="Views\Home\BangKePhieuNhap.cshtml" />
     <Content Include="Views\Home\BangKeHDDV.cshtml" />
+    <Content Include="Views\Home\NgayBaoCaoHangNhap2CT.cshtml" />
+    <Content Include="Views\Home\HangNhapNhom2CT.cshtml" />
+    <Content Include="Views\Home\NgayBaoCaoSoNhatKyMuaHang.cshtml" />
+    <Content Include="Views\Home\SoNhatKyMuaHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
