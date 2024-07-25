@@ -9,5 +9,6 @@ namespace ReportManagement.Models
     {
         public KhachHangModel KHachHangModel { get; set; }
         public TaiKhoanModel TaiKhoanModel { get;set; }
+        public ChiNhanhModel ChiNhanhModel { get; set; }
     }
 }

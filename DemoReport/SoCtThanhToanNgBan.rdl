@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-23T07:54:04.5269847Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-24T06:58:17.0961495Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -173,8 +173,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Top>0cm</Top>
-                <Left>0cm</Left>
+                <Left>0.00001cm</Left>
                 <Height>0.88558cm</Height>
                 <Width>12.53728cm</Width>
                 <Style>
@@ -209,7 +208,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox2</rd:DefaultName>
                 <Top>1.48221cm</Top>
-                <Left>0cm</Left>
+                <Left>0.00001cm</Left>
                 <Height>0.87517cm</Height>
                 <Width>28.3cm</Width>
                 <ZIndex>1</ZIndex>
@@ -264,7 +263,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>4.01599cm</Top>
-                <Left>0cm</Left>
+                <Left>0.00001cm</Left>
                 <Height>0.6cm</Height>
                 <Width>28.3cm</Width>
                 <ZIndex>2</ZIndex>
@@ -316,7 +315,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>2.53377cm</Top>
-                <Left>0cm</Left>
+                <Left>0.00001cm</Left>
                 <Height>0.6cm</Height>
                 <Width>28.3cm</Width>
                 <ZIndex>3</ZIndex>
@@ -368,7 +367,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>3.2396cm</Top>
-                <Left>0cm</Left>
+                <Left>0.00001cm</Left>
                 <Height>0.6cm</Height>
                 <Width>28.3cm</Width>
                 <ZIndex>4</ZIndex>
@@ -402,6 +401,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>4.79238cm</Top>
+                <Left>0.00001cm</Left>
                 <Height>0.6cm</Height>
                 <Width>28.3cm</Width>
                 <ZIndex>5</ZIndex>
@@ -453,6 +453,448 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
+                    <TablixRow>
+                      <Height>0.6cm</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox43">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox43</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox44">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox44</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <RightBorder>
+                                  <Style>None</Style>
+                                </RightBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox47">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox47</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Style>None</Style>
+                                </LeftBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox55">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox55</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox56">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Số dư đầu kỳ</Value>
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox56</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox60">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox60</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox62">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox62</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox69">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=iif(fields!Nhom.Value=1 and fields!PsNo.Value&gt;0,fields!PsNo.Value,nothing)</Value>
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Format>#,0;(#,0);''</Format>
+                                        <Language>vi-VN</Language>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox69</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox70">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=iif(fields!Nhom.Value=1 and fields!PsCo.Value&gt;0,fields!PsCo.Value,nothing)</Value>
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Format>#,0;(#,0);''</Format>
+                                        <Language>vi-VN</Language>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox70</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox71">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox71</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox72">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Times New Roman</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox72</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Style>None</Style>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Dashed</Style>
+                                </BottomBorder>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
                     <TablixRow>
                       <Height>0.6cm</Height>
                       <TablixCells>
@@ -826,9 +1268,16 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=iif(iif(fields!Nhom.Value=4,ReportItems!Textbox69.Value+
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsNo.Value,nothing),sum,nothing)-
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsCo.Value,nothing),sum,nothing)
+,nothing)&lt;0,nothing,iif(fields!Nhom.Value=4,ReportItems!Textbox69.Value+
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsNo.Value,nothing),sum,nothing)-
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsCo.Value,nothing),sum,nothing)
+,nothing))</Value>
                                       <Style>
                                         <FontFamily>Times New Roman</FontFamily>
+                                        <Format>#,0;(#,0);''</Format>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -864,9 +1313,16 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value />
+                                      <Value>=iif(iif(fields!Nhom.Value=4,ReportItems!Textbox70.Value+
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsNo.Value,nothing),sum,nothing)-
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsCo.Value,nothing),sum,nothing)
+,nothing)&lt;0,nothing,iif(fields!Nhom.Value=4,ReportItems!Textbox70.Value+
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsNo.Value,nothing),sum,nothing)-
+Runningvalue(iif(fields!Nhom.Value=4,fields!PsCo.Value,nothing),sum,nothing)
+,nothing))</Value>
                                       <Style>
                                         <FontFamily>Times New Roman</FontFamily>
+                                        <Format>#,0;(#,0);''</Format>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2875,9 +3331,12 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 <TablixRowHierarchy>
                   <TablixMembers>
                     <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                    </TablixMember>
+                    <TablixMember>
                       <Group Name="RowGroup" />
                       <Visibility>
-                        <Hidden>=IIF(Fields!Nhom.Value= 2, true, false)</Hidden>
+                        <Hidden>=IIF(Fields!Nhom.Value= 2 or Fields!Nhom.Value= 1, true, false)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
@@ -2890,8 +3349,9 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                 </TablixRowHierarchy>
                 <DataSetName>SoThanhToanNgBan</DataSetName>
                 <Top>5.53693cm</Top>
-                <Height>4.65833cm</Height>
-                <Width>28.27796cm</Width>
+                <Left>0.00001cm</Left>
+                <Height>5.25833cm</Height>
+                <Width>28.27795cm</Width>
                 <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
@@ -2948,8 +3408,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
-                <Top>10.61804cm</Top>
-                <Left>0cm</Left>
+                <Top>11.02725cm</Top>
                 <Height>0.6cm</Height>
                 <Width>13.2458cm</Width>
                 <ZIndex>7</ZIndex>
@@ -2989,8 +3448,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
-                <Top>11.28859cm</Top>
-                <Left>0cm</Left>
+                <Top>11.6978cm</Top>
                 <Height>0.6cm</Height>
                 <Width>6.945cm</Width>
                 <ZIndex>8</ZIndex>
@@ -3064,7 +3522,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
-                <Top>11.55672cm</Top>
+                <Top>11.96593cm</Top>
                 <Left>20.48579cm</Left>
                 <Height>0.6cm</Height>
                 <Width>6.53939cm</Width>
@@ -3113,7 +3571,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox31</rd:DefaultName>
-                <Top>12.33311cm</Top>
+                <Top>12.74232cm</Top>
                 <Left>3.63124cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
@@ -3162,7 +3620,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox31</rd:DefaultName>
-                <Top>12.33311cm</Top>
+                <Top>12.74232cm</Top>
                 <Left>21.52042cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
@@ -3212,7 +3670,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Left>22.55033cm</Left>
+                <Left>22.55034cm</Left>
                 <Height>1.30582cm</Height>
                 <Width>5.74967cm</Width>
                 <ZIndex>12</ZIndex>
@@ -3230,9 +3688,9 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Top>0.3cm</Top>
-            <Left>0.7cm</Left>
+            <Left>0.69999cm</Left>
             <Height>17.22883cm</Height>
-            <Width>28.3cm</Width>
+            <Width>28.30001cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>

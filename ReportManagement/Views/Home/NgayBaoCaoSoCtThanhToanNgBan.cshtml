@@ -1,0 +1,322 @@
+﻿@model ReportManagement.Models.KH_TKModel
+@{
+    ViewBag.Title = "Sổ chi tiết thanh toán người bán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+    string controllerName = ViewBag.viewName;
+}
+<style>
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    label {
+        width: 20px;
+    }
+    .form-control {
+        width: 180px;
+    }
+    .form-select {
+        width: 180px;
+    }
+    #datepicker {
+        width: 180px;
+    }
+
+        #datepicker > span:hover {
+            cursor: pointer;
+        }
+
+    #datepicker2 {
+        width: 180px;
+    }
+
+        #datepicker2 > span:hover {
+            cursor: pointer;
+        }
+</style>
+<script>
+    var d = new Date();
+    var currMonth = d.getMonth();
+    var currYear = d.getFullYear();
+    var startDate = new Date(currYear, currMonth, 1);
+    var lastDate = new Date(currYear, currMonth + 1, 0);
+    $(function () {
+        $('#itemDropdown').show(function () {
+    var selectedId = $(this).val();
+    if (selectedId) {
+        $.ajax({
+            url: '@Url.Action("GetItemName", "Home")',
+            type: 'GET',
+            data: { id: selectedId },
+            success: function(response) {
+                $('#itemName').text(response.name);
+            },
+            error: function() {
+                $('#itemName').text('Lỗi: không tìm thấy!');
+            }
+        });
+    } else {
+        $('#itemName').text('');
+    }
+});
+    $('#itemDropdown').change(function() {
+        var selectedId = $(this).val();
+        if (selectedId) {
+            $.ajax({
+                url: '@Url.Action("GetItemName", "Home")',
+                type: 'GET',
+                data: { id: selectedId },
+                success: function(response) {
+                    $('#itemName').text(response.name);
+                },
+                error: function() {
+                    $('#itemName').text('Lỗi: không tìm thấy!');
+                }
+            });
+        } else {
+            $('#itemName').text('');
+        }
+    });
+$('#itemDropdownKH').show(function () {
+   var selectedId = $(this).val();
+    if (selectedId) {
+        $.ajax({
+            url: '@Url.Action("GetKHName", "Home")',
+            type: 'GET',
+            data: { id: selectedId },
+            success: function(response) {
+                $('#itemKH').text(response.name);
+            },
+            error: function() {
+                $('#itemKH').text('Lỗi: không tìm thấy!');
+            }
+        });
+    } else {
+        $('#itemKH').text('');
+    }
+});
+    $('#itemDropdownKH').change(function() {
+        var selectedId = $(this).val();
+        if (selectedId) {
+            $.ajax({
+                url: '@Url.Action("GetKHName", "Home")',
+                type: 'GET',
+                data: { id: selectedId },
+                success: function(response) {
+                    $('#itemKH').text(response.name);
+                },
+                error: function() {
+                    $('#itemKH').text('Lỗi: không tìm thấy!');
+                }
+            });
+        } else {
+            $('#itemKH').text('');
+        }
+    });
+    $('#itemDropdownCN').show(function () {
+       var selectedId = $(this).val();
+        if (selectedId) {
+            $.ajax({
+                url: '@Url.Action("GetCNName", "Home")',
+                type: 'GET',
+                data: { id: selectedId },
+                success: function(response) {
+                    $('#itemCN').text(response.name);
+                },
+                error: function() {
+                    $('#itemCN').text('Lỗi: không tìm thấy!');
+                }
+            });
+        } else {
+            $('#itemCN').text('');
+        }
+    });
+    $('#itemDropdownCN').change(function() {
+        var selectedId = $(this).val();
+        if (selectedId) {
+            $.ajax({
+                url: '@Url.Action("GetCNName", "Home")',
+                type: 'GET',
+                data: { id: selectedId },
+                success: function(response) {
+                    $('#itemCN').text(response.name);
+                },
+                error: function() {
+                    $('#itemCN').text('Lỗi: không tìm thấy!');
+                }
+            });
+        } else {
+            $('#itemCN').text('');
+        }
+    });
+        $("#datepicker").datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy',
+        }).datepicker('setDate', startDate);
+        $("#datepicker2").datepicker({
+            autoclose: true,
+            todayHighlight: true,
+            format: 'dd/mm/yyyy',
+        }).datepicker('setDate', lastDate);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Show the modal
+        var myModal = new bootstrap.Modal(document.getElementById('datetimeModal'));
+        myModal.show();
+    });
+    $(document).ready(function () {
+        $('.single-char-01-only').on('keypress', function (e) {
+            var allowedChars = '01'; // Chỉ cho phép các ký tự 1, 2, 3
+            var char = String.fromCharCode(e.which);
+
+            // Kiểm tra xem ký tự nhập vào có phải là 1 trong các ký tự được phép không
+            if (allowedChars.indexOf(char) === -1) {
+                e.preventDefault();
+                return;
+            }
+
+            // Ngăn không cho nhập nếu đã có một ký tự
+            if ($(this).val().length >= 1) {
+                e.preventDefault();
+                $(this).val(char); // Thay thế ký tự cũ bằng ký tự mới
+            }
+        });
+
+        // Đảm bảo chỉ dán một ký tự và ký tự đó là 1, 2, hoặc 3
+        $('.single-char-01-only').on('input', function () {
+            var val = $(this).val();
+            var allowedChars = '01'; // Chỉ cho phép các ký tự 1, 2, 3
+
+            // Loại bỏ các ký tự không được phép và chỉ giữ lại ký tự cuối cùng nếu nó hợp lệ
+            if (val.length > 1 || allowedChars.indexOf(val) === -1) {
+                var lastChar = val.slice(-1);
+                if (allowedChars.indexOf(lastChar) !== -1) {
+                    $(this).val(lastChar); // Giữ lại ký tự hợp lệ cuối cùng
+                } else {
+                    $(this).val(''); // Xóa tất cả nếu không hợp lệ
+                }
+            }
+
+        });
+
+        const VNDCheckbox = document.getElementById('VND');
+        const NgoaiTeCheckbox = document.getElementById('NgoaiTe');
+
+        VNDCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                NgoaiTeCheckbox.checked = false;
+            }
+        });
+
+        NgoaiTeCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                VNDCheckbox.checked = false;
+            }
+        });
+});
+</script>
+
+@using (Html.BeginForm(controllerName, "Home", FormMethod.Post))
+{
+    <div class="modal fade" id="datetimeModal" tabindex="-1" aria-labelledby="datetimeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="datetimeModalLabel">SỔ CHI TIẾT THANH TOÁN VỚI NGƯỜI BÁN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ps-5">
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        <label class="control-label col-2">Từ:</label>
+                        <div id="datepicker" class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
+                            @Html.TextBox("fromDate", null, new { @class = "form-control form-control-sm", placeholder = "Ngày bắt đầu" })
+                            <span class="input-group-addon btn btn-outline-secondary btn-sm"><i class="fa-solid fa-calendar-days"></i></span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        <label class="control-label col-2">Đến:</label>
+                        <div id="datepicker2" class="input-group date justify-content-center align-items-center align-content-center" lang="vi" data-date-format="dd-mm-yyyy">
+                            @Html.TextBox("toDate", null, new { @class = "form-control form-control-sm", placeholder = "Ngày kết thúc" })
+                            <span class="input-group-addon btn btn-outline-secondary btn-sm"><i class="fa-solid fa-calendar-days "></i></span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        @Html.LabelFor(model => model.TaiKhoanModel.Id, "Tài khoản", htmlAttributes: new { @class = "control-label col-2" })
+                        <div class="col-md-10 d-flex">
+                            @Html.DropDownListFor(model => model.TaiKhoanModel.Id, (List<SelectListItem>)ViewData["TaiKhoanId"], htmlAttributes: new { @class = "form-select form-select-sm  ", id = "itemDropdown" })
+                            @Html.ValidationMessageFor(model => model.TaiKhoanModel.Id, "", new { @class = "text-danger" })
+                            <div class="d-flex align-items-center p-2 w-50"><span id="itemName" class="badge text-bg-secondary"></span></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        @Html.LabelFor(model => model.KHachHangModel.Id, "Khách hàng", htmlAttributes: new { @class = "control-label col-2 text-nowrap" })
+                        <div class="col-md-10 d-flex">
+                            @Html.DropDownListFor(model => model.KHachHangModel.Id, (List<SelectListItem>)ViewData["KhachHangId"], htmlAttributes: new { @class = "form-select form-select-sm text-nowrap", id = "itemDropdownKH" })
+                            @Html.ValidationMessageFor(model => model.KHachHangModel.Id, "", new { @class = "text-danger" })
+                            <div class="d-flex align-items-center p-2 w-50"><span id="itemKH" class="badge text-bg-secondary text-wrap text-start"></span></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        <label class="control-label col-2">Chi tiết theo hh</label>
+                        <div class="d-flex w-100">
+                            @Html.TextBox("CtTheoHh", null, new { @class = "form-control-sm form-control single-char-01-only text-end", maxlenght = "1" })
+                            <label class="control-label col ms-2">0. Không chi tiết; 1. Chi tiết</label>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        @Html.LabelFor(model => model.ChiNhanhModel.Id, "Chi nhánh", htmlAttributes: new { @class = "control-label col-2 text-nowrap" })
+                        <div class="col-md-10 d-flex">
+                            @Html.DropDownListFor(model => model.ChiNhanhModel.Id, (List<SelectListItem>)ViewData["ChiNhanhId"], htmlAttributes: new { @class = "form-select form-select-sm text-nowrap", id = "itemDropdownCN" })
+                            @Html.ValidationMessageFor(model => model.ChiNhanhModel.Id, "", new { @class = "text-danger" })
+                            <div class="d-flex align-items-center p-2 w-50"><span id="itemCN" class="badge text-bg-secondary text-wrap text-start"></span></div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3 align-content-center">
+                        <label class="control-label col-2">Mẫu báo cáo</label>
+                        <div class="col-10 d-flex">
+                            <label class="d-flex col-2">
+                                <input id="VND" type="checkbox" class="Maubc" name="fooby[1][]" value="VND" />&nbsp;VND
+                            </label>
+                            <label class="d-flex col-2">
+                                <input id="NgoaiTe" type="checkbox" class="Maubc" name="fooby[1][]" value="NgoaiTe" />&nbsp;Ngoại tệ
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

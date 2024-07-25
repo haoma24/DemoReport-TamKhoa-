@@ -197,6 +197,7 @@
     <Compile Include="Kho.cs">
       <DependentUpon>Tamkhoa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChiNhanhModel.cs" />
     <Compile Include="Models\KhachHangModel.cs" />
     <Compile Include="Models\KH_TKModel.cs" />
     <Compile Include="Models\PhieuNhapModel.cs" />
@@ -428,6 +429,8 @@
     <Content Include="Views\Home\HangNhapNhom2CT.cshtml" />
     <Content Include="Views\Home\NgayBaoCaoSoNhatKyMuaHang.cshtml" />
     <Content Include="Views\Home\SoNhatKyMuaHang.cshtml" />
+    <Content Include="Views\Home\NgayBaoCaoSoCtThanhToanNgBan.cshtml" />
+    <Content Include="Views\Home\SoCtThanhToanNgBan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

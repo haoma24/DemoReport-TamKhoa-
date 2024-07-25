@@ -17,7 +17,7 @@ namespace ReportManagement.Controllers
         }
 
         // Method to open a connection
-        private SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
         }

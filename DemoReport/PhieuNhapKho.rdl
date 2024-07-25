@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:58:17.0626449Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-24T07:33:48.8795790Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -2766,6 +2766,11 @@ WHERE PhieuNhapId = @PhieuNhapId</CommandText>
   <ReportParameters>
     <ReportParameter Name="PhieuNhapId">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>14</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>Phieu Nhap Id</Prompt>
       <Hidden>true</Hidden>
     </ReportParameter>

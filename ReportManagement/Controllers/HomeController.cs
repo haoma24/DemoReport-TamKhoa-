@@ -249,6 +249,25 @@ namespace ReportManagement.Controllers
             ViewBag.ViewName = "SoTienVay";
             return View("~/Views/Report/Index.cshtml");
         }
+        //BCSTCV
+        public ActionResult BaoCaoSoCtThanhToanNgBan(FormCollection form)
+        {
+            var tungay = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            var denngay = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null).ToString("MM/dd/yyyy");
+            string _TkId = form["TkId"];
+            string _KhId = form["KhId"];
+
+            reportViewer.ServerReport.ReportPath = "/DemoReport/SoCtThanhToanNgBan";
+            ReportParameter[] parameters = new ReportParameter[4];
+            parameters[0] = new ReportParameter("TaiKhoan_id", _TkId, true);
+            parameters[1] = new ReportParameter("TuNgay", tungay, true);
+            parameters[2] = new ReportParameter("DenNgay", denngay, true);
+            parameters[3] = new ReportParameter("KhachHang_id", _KhId, true);
+            reportViewer.ServerReport.SetParameters(parameters);
+            ViewBag.ReportViewer = reportViewer;
+            ViewBag.ViewName = "SoCtThanhToanNgBan";
+            return View("~/Views/Report/Index.cshtml");
+        }
         //BCBKPN
         public ActionResult BaoCaoBangKePhieuNhap(FormCollection form)
         {
@@ -475,6 +494,59 @@ namespace ReportManagement.Controllers
                 listKhachHang.Add(listItem);
             };
             ViewData["KhachHangId"] = listKhachHang;
+
+            if (name == "" || name == null || name.Contains(" "))
+            {
+                ViewBag.viewName = (string)Session["ViewName"];
+            }
+            else
+                ViewBag.viewName = name;
+            return View();
+        }
+        //NBCSCTTTNB
+        public ActionResult NgayBaoCaoSoCtThanhToanNgBan(string name)
+        {
+            var tk = db.TaiKhoan.OrderBy(x => x.Id);
+            List<SelectListItem> listTaiKhoan = new List<SelectListItem>();
+            foreach (var item in tk.Where(x => x.TaiKhoanParentId == 16 || x.Id == 22 || x.Id == 23 || x.TaiKhoanParentId
+            == 23 || x.Id == 29 || x.TaiKhoanParentId == 29 || x.Id == 37 || x.Id == 38 || x.Id == 101 || x.Id == 112 || x.Id == 124  || x.TaiKhoanParentId == 124))
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.TaiKhoanUd,
+                    Text = item.TaiKhoanUd
+                };
+                listTaiKhoan.Add(listItem);
+            };
+            ViewData["TaiKhoanId"] = listTaiKhoan;
+
+            //Return list KhachHangNm and fetch to dropdownlist
+            var kh = db.KhachHang.OrderBy(x => x.Id);
+            List<SelectListItem> listKhachHang = new List<SelectListItem>();
+            foreach (var item in kh)
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.KhachHangUd,
+                    Text = item.KhachHangUd
+                };
+                listKhachHang.Add(listItem);
+            };
+            ViewData["KhachHangId"] = listKhachHang;
+
+            //Return list KhachHangNm and fetch to dropdownlist
+            var cn = db.ChiNhanh.OrderBy(x => x.Id);
+            List<SelectListItem> listChiNhanh = new List<SelectListItem>();
+            foreach (var item in cn)
+            {
+                SelectListItem listItem = new SelectListItem()
+                {
+                    Value = item.ChiNhanhUd,
+                    Text = item.ChiNhanhUd
+                };
+                listChiNhanh.Add(listItem);
+            };
+            ViewData["ChiNhanhId"] = listChiNhanh;
 
             if (name == "" || name == null || name.Contains(" "))
             {
@@ -814,6 +886,69 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
+        //SCTTV
+        public ActionResult SoCtThanhToanNgBan(FormCollection form, KH_TKModel model)
+        {
+            DateTime fromDate = DateTime.Now;
+            DateTime toDate = DateTime.Now;
+            int taikhoanud = 111;
+            int taikhoanid = 350;
+            int khid = 1549;
+            string khud = "BORO";
+            if (form["fromDate"] != null || form["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
+                taikhoanud = int.Parse(model.TaiKhoanModel.Id);
+                khud = model.KHachHangModel.Id;
+                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
+                string sql2 = "select khachhang_id from KhachHang where KhachHang_ud = '" + khud + "'";
+                DataTable tempdt = knA00.ExecuteQuery(sql, null);
+                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                DataTable tempdt2 = knA00.ExecuteQuery(sql2, null);
+                if (tempdt2.Rows.Count > 0)
+                {
+                    khid = tempdt2.Rows[0].Field<int>(0);
+                }
+                else khid = 1550;
+                ViewBag.khid = khid;
+                ViewBag.khud = khud;
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.taiKhoanUd = taikhoanud;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            if (Session["fromDate"] != null || Session["toDate"] != null)
+            {
+                //Sau khi chon ngay bao cao
+                fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
+                toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
+                taikhoanid = (int)Session["TaiKhoanId"];
+                ViewBag.taikhoanid = taikhoanid;
+                ViewBag.khid = khid;
+                ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
+                ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
+                goto kt;
+            }
+            //Neu duoc goi lan dau thi chuyen den NgayBaoCao
+            if (form["fromDate"] == null || form["toDate"] == null)
+            {
+                Session["ViewName"] = "SoTienGuiNganHang";
+                return RedirectToAction("NgayBaoCaoSoQuy", "Home");
+            }
+
+        kt: Session["KhachHangId"] = khid;
+            Session["TaiKhoanId"] = taikhoanid;
+            Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
+            Session["toDate"] = toDate.ToString("dd/MM/yyyy");
+
+            string sqlQuery = "exec SoCtThanhToanNgBan @khachhang_id = '"+khid+"', @taikhoan_id = " + taikhoanid + ", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            ViewBag.Datatable = dt;
+            return View(); 
+        }
         //BKPN
         public ActionResult BangKePhieuNhap(FormCollection form)
         {
@@ -1021,7 +1156,7 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //So tong hop chu T
+        //STHCT
         public ActionResult SoTongHopChuT(FormCollection form, TaiKhoanModel taiKhoan)
         {
             DateTime fromDate = DateTime.Now;
@@ -1072,7 +1207,7 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //Tong hop hang nhap mua
+        //oTHHNM
         public ActionResult TongHopHangNhapMua(FormCollection form)
         {
             DateTime fromDate = DateTime.Now;
@@ -1148,6 +1283,15 @@ namespace ReportManagement.Controllers
             if (item != null)
             {
                 return Json(new { name = item.KhachHangNm }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { name = "Không tìm thấy" }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetCNName(string id)
+        {
+            var item = db.ChiNhanh.FirstOrDefault(i => i.ChiNhanhUd == id);
+            if (item != null)
+            {
+                return Json(new { name = item.ChiNhanhNm }, JsonRequestBehavior.AllowGet);
             }
             return Json(new { name = "Không tìm thấy" }, JsonRequestBehavior.AllowGet);
         }

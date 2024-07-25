@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-18T06:29:41.0299559Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-24T07:04:20.9693129Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -950,6 +950,7 @@
                                   </Border>
                                   <RightBorder>
                                     <Color>Black</Color>
+                                    <Style>Solid</Style>
                                   </RightBorder>
                                   <VerticalAlign>Middle</VerticalAlign>
                                   <PaddingLeft>2pt</PaddingLeft>
@@ -1023,7 +1024,6 @@
                                 <rd:DefaultName>Textbox138</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
                                     <Style>Solid</Style>
                                   </Border>
                                   <PaddingLeft>2pt</PaddingLeft>

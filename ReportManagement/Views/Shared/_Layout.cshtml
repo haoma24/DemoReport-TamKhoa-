@@ -40,6 +40,7 @@
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
+
     </script>
 </head>
 <body class="sb-nav-fixed e-bg-light h-100">
@@ -147,11 +148,11 @@
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth11" aria-expanded="false" aria-controls="pagesCollapseAuth11">
                                     <div class="sb-sidenav-collapse-arrow e-text-dark"><i class="fas fa-angle-down"></i></div>
                                     <div class="sb-nav-link-icon"><i class="fa-regular fa-file-lines e-list-text"></i></div>
-                                    <span class="e-list-text">Quản lý danh sách nhà cung cấp</span>
+                                    <span class="e-list-text">Sổ kế toán công cợ phải trả</span>
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth11" aria-labelledby="headingOne" @*data-bs-parent="#sidenavAccordionPages2"*@>
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="@Url.Action("DanhMucVatTu","Home")"><span class="e-list-text">Sổ chi tiết thanh toán với người bán</span></a>
+                                        <a class="nav-link" href="@Url.Action("NgayBaoCaoSoCtThanhToanNgBan","Home", new {name = "SoCtThanhToanNgBan"})"><span class="e-list-text">Sổ chi tiết thanh toán với người bán</span></a>
                                         <a class="nav-link" href="@Url.Action("DanhMucVatTu","Home")"><span class="e-list-text">Sổ chi tiết thanh toán với người bán (lên tất cả NB)</span></a>
                                         <a class="nav-link" href="@Url.Action("DanhMucVatTu","Home")"><span class="e-list-text">Bảng cân đối ps c.nợ của một tk</span></a>
                                         <a class="nav-link" href="@Url.Action("DanhMucVatTu","Home")"><span class="e-list-text">Bảng cân đối ps c.nợ của nhiều tk</span></a>
