@@ -2,6 +2,9 @@
     ViewBag.Title = "SoQuyTienMat";
     Layout = "~/Views/Shared/_Layout.cshtml";
     System.Data.DataTable dt = ViewBag.Datatable as System.Data.DataTable;
+    System.Data.DataRow row1 = dt.Rows[0];
+    double SoDuDk = double.Parse(row1["PsNo"].ToString()) - double.Parse(row1["PsCo"].ToString());
+    double DuCuoi = 0;
 }
 
 @using (Html.BeginForm("BaoCaoSoQuy", "Home", FormMethod.Post, new { target = "_blank" }))
@@ -51,9 +54,16 @@
                             <td class="e-ellipsis-100">@row["Ngayct"]</td>
                             <td class="e-ellipsis-100">@row["Soct"]</td>
                             <td class="e-ellipsis-100">@row["DoiTac"]</td>
-                            <td class="e-ellipsis-100">@row["Khachhang_ud"]</td>
-                            <td class="e-ellipsis-100">@row["Khachhang_nm"]</td>
-                            <td class="e-ellipsis-100">@row["DienGiai"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhangud"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhangnm"]</td>
+                            @if (row["Nhom"].ToString() != "4")
+                            {
+                                <td class="e-ellipsis-100 fw-bold">@row["DienGiai"]</td>
+                            }
+                            else
+                            {
+                                <td class="e-ellipsis-100">@row["DienGiai"]</td>
+                            }
                             <td class="e-ellipsis-100">@row["TkDu"]</td>
                             @if (double.Parse(row["Psno"].ToString()) == 0)
                             {
@@ -61,7 +71,7 @@
                             }
                             else
                             {
-                                <td class="e-ellipsis-100">@row["Psno"]</td>
+                                <td class="e-ellipsis-100">@string.Format("{0:0,0}", row["Psno"])</td>
                             }
                             @if (double.Parse(row["Psco"].ToString()) == 0)
                             {
@@ -69,17 +79,28 @@
                             }
                             else
                             {
-                                <td class="e-ellipsis-100">@row["Psco"]</td>
+                                <td class="e-ellipsis-100">@string.Format("{0:0,0}", row["Psco"])</td>
                             }
-                            <td class="e-ellipsis-100">@row["Mact"]</td>
-                            <td class="e-ellipsis-100">@row["VuViec_ud"]</td>
-                            <td class="e-ellipsis-100">@row["MaPhi_ud"]</td>
-                            <td class="e-ellipsis-100">@row["TkDu_nm"]</td>
-                            <td class="e-ellipsis-100">@row["VuViec_nm"]</td>
-                            <td class="e-ellipsis-100">@row["MaPhi_nm"]</td>
-                            <td class="e-ellipsis-100">@row["Phieu_ud"]</td>
+                            @if (row["Nhom"].ToString() == "4")
+                            {
+
+                                DuCuoi += (double.Parse(row["PsNo"].ToString()) - double.Parse(row["PsCo"].ToString()));
+                                <td class="e-ellipsis-100">@string.Format("{0:0,0}", SoDuDk + DuCuoi)</td>
+                            }
+                            else
+                            {
+                                <td class="e-ellipsis-100"></td>
+                            }
+
+
+                            <td class="e-ellipsis-100">@row["VuViecud"]</td>
+                            <td class="e-ellipsis-100">@row["MaPhiud"]</td>
+                            <td class="e-ellipsis-100">@row["TkDunm"]</td>
+                            <td class="e-ellipsis-100">@row["VuViecnm"]</td>
+                            <td class="e-ellipsis-100">@row["MaPhinm"]</td>
+                            <td class="e-ellipsis-100">@row["Phieuud"]</td>
                         </tr>
-                    }
+                                            }
                 </tbody>
             </table>
             <nav aria-label="Page navigation example">

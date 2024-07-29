@@ -71,6 +71,9 @@ textarea {
 .nav-link:active {
      background-color: #0DCAF0;
 }
+a.clicked {
+    background-color: #0DCAF0;
+}
 .nav-link:focus {
     background-color: #0DCAF0;
 }

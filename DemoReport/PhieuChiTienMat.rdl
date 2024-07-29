@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:14:17.6485704Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-29T01:41:03.8480763Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1073,7 +1073,7 @@ WHERE PhieuChiId = @PhieuChiId</CommandText>
             <Top>2.75669cm</Top>
             <Left>15.99407cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.18875cm</Width>
+            <Width>4.18876cm</Width>
             <ZIndex>20</ZIndex>
             <Style>
               <Border>

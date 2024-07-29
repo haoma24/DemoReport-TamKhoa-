@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="BoroWeb">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=192.168.1.3\TAMKHOAJSC;Initial Catalog=BORO_EACCOUNTING_WEB_V1</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>5a6133f7-eff1-4cc9-a7ad-782e3bd7bc32</DataSourceID>
+</RptDataSource>

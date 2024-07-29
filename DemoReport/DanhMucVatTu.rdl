@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:15:19.9070425Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-25T04:34:09.2965739Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -176,7 +176,7 @@ FROM VatTu</CommandText>
             <Top>5.66727cm</Top>
             <Left>12.67637cm</Left>
             <Height>1.4255cm</Height>
-            <Width>7.10513cm</Width>
+            <Width>7.39708cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -213,7 +213,7 @@ FROM VatTu</CommandText>
             <Top>5.06727cm</Top>
             <Left>12.67637cm</Left>
             <Height>0.6cm</Height>
-            <Width>7.10513cm</Width>
+            <Width>7.39708cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -229,22 +229,22 @@ FROM VatTu</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.77328cm</Width>
+                  <Width>1.69847cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.59358cm</Width>
+                  <Width>3.51877cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.78917cm</Width>
+                  <Width>5.71436cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.79633cm</Width>
+                  <Width>2.72152cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.96803cm</Width>
+                  <Width>2.89322cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.01517cm</Width>
+                  <Width>2.94036cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -262,7 +262,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>STT</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -297,7 +297,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>Mã vật tư</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -332,7 +332,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>Tên vật tư</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -367,7 +367,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>Đơn vị tính</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -402,7 +402,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>Tk giá vốn</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -437,7 +437,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>Tk doanh thu</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -475,7 +475,9 @@ FROM VatTu</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=RowNumber(Nothing)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -513,7 +515,9 @@ FROM VatTu</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!VatTuUd.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -552,7 +556,9 @@ FROM VatTu</CommandText>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!VatTuNm.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -589,7 +595,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>=Fields!DonViTinh.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -629,7 +635,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>=Fields!TkGiaVon.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -669,7 +675,7 @@ FROM VatTu</CommandText>
                                 <TextRun>
                                   <Value>=Fields!TkDoanhThu.Value</Value>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
+                                    <FontFamily>Times New Roman</FontFamily>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -727,7 +733,7 @@ FROM VatTu</CommandText>
             <Top>2.73133cm</Top>
             <Left>0.58677cm</Left>
             <Height>2.30066cm</Height>
-            <Width>19.93556cm</Width>
+            <Width>19.48668cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -739,7 +745,7 @@ FROM VatTu</CommandText>
         <Height>4.125in</Height>
         <Style />
       </Body>
-      <Width>8.30534in</Width>
+      <Width>21cm</Width>
       <Page>
         <PageFooter>
           <Height>1.54517cm</Height>
@@ -750,7 +756,7 @@ FROM VatTu</CommandText>
               <Top>0.3937cm</Top>
               <Left>0.58677cm</Left>
               <Height>0cm</Height>
-              <Width>19.93557cm</Width>
+              <Width>19.48669cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -767,14 +773,14 @@ FROM VatTu</CommandText>
                     <TextRun>
                       <Value>Trang </Value>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
+                        <FontFamily>Times New Roman</FontFamily>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Globals!PageNumber</Value>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
+                        <FontFamily>Times New Roman</FontFamily>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -786,7 +792,7 @@ FROM VatTu</CommandText>
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.57009cm</Top>
-              <Left>16.49834cm</Left>
+              <Left>16.04945cm</Left>
               <Height>0.6cm</Height>
               <Width>4.024cm</Width>
               <ZIndex>1</ZIndex>

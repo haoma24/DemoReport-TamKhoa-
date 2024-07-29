@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-16T09:13:20.3585548Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-25T04:28:39.5402087Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -183,7 +183,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.33866cm</Top>
-            <Left>13.17919cm</Left>
+            <Left>12.53174cm</Left>
             <Height>1.30582cm</Height>
             <Width>7.77051cm</Width>
             <ZIndex>1</ZIndex>
@@ -491,31 +491,31 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.0434cm</Width>
+                  <Width>0.97146cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.7089cm</Width>
+                  <Width>1.63696cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.86616cm</Width>
+                  <Width>3.79422cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.29381cm</Width>
+                  <Width>1.22187cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.32084cm</Width>
+                  <Width>1.2489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.42806cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.49206cm</Width>
+                  <Width>2.42012cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.14823cm</Width>
+                  <Width>3.07629cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.24588cm</Width>
+                  <Width>3.17394cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1278,7 +1278,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             <Top>7.40776cm</Top>
             <Left>0.33042cm</Left>
             <Height>1.8cm</Height>
-            <Width>20.61928cm</Width>
+            <Width>19.97183cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1386,9 +1386,9 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>17.3067cm</Left>
-            <Height>2.505cm</Height>
-            <Width>3.643cm</Width>
+            <Left>16.78634cm</Left>
+            <Height>0.96561cm</Height>
+            <Width>3.51591cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -1435,8 +1435,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>12.06353cm</Left>
-            <Height>2.505cm</Height>
+            <Left>11.75925cm</Left>
+            <Height>0.96561cm</Height>
             <Width>4.8507cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
@@ -1484,8 +1484,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Paragraphs>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
-            <Left>5.39639cm</Left>
-            <Height>2.505cm</Height>
+            <Left>5.18825cm</Left>
+            <Height>0.96561cm</Height>
             <Width>6.39461cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
@@ -1534,7 +1534,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             <rd:DefaultName>Textbox31</rd:DefaultName>
             <Top>10.93664cm</Top>
             <Left>0.33042cm</Left>
-            <Height>2.505cm</Height>
+            <Height>0.96561cm</Height>
             <Width>4.68144cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
@@ -1610,7 +1610,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             <Top>10.23081cm</Top>
             <Left>15.0842cm</Left>
             <Height>0.63527cm</Height>
-            <Width>5.8655cm</Width>
+            <Width>5.21805cm</Width>
             <ZIndex>16</ZIndex>
             <Style>
               <Border>
@@ -1624,10 +1624,10 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>6.57501in</Height>
+        <Height>5.62804in</Height>
         <Style />
       </Body>
-      <Width>8.41667in</Width>
+      <Width>21cm</Width>
       <Page>
         <PageFooter>
           <Height>1.79917cm</Height>
@@ -1638,7 +1638,7 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
               <Top>0.3175cm</Top>
               <Left>0.33867cm</Left>
               <Height>0cm</Height>
-              <Width>20.61103cm</Width>
+              <Width>19.96358cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -1674,8 +1674,8 @@ WHERE ct.PhieuXuatKhoId = @PhieuXuatKhoId</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox36</rd:DefaultName>
-              <Top>0.45861cm</Top>
-              <Left>16.5447cm</Left>
+              <Top>0.49389cm</Top>
+              <Left>15.89725cm</Left>
               <Height>0.6cm</Height>
               <Width>4.405cm</Width>
               <ZIndex>1</ZIndex>

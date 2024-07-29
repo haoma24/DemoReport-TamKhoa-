@@ -9,16 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-18T06:29:27.0518825Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-29T01:40:47.3201783Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A0000000">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=192.168.1.3\TAMKHOAJSC;Initial Catalog=A0000000</ConnectString>
-      </ConnectionProperties>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>b09cbff1-38c2-4daf-9957-04252205617b</rd:DataSourceID>
     </DataSource>
@@ -26,7 +23,7 @@
   <DataSets>
     <DataSet Name="SoQuyTienMat">
       <Query>
-        <DataSourceName>A0000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@TaiKhoan_id">
             <Value>=Parameters!taikhoan_id.Value</Value>
@@ -222,22 +219,22 @@
     </DataSet>
     <DataSet Name="TaiKhoan">
       <Query>
-        <DataSourceName>A0000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@taikhoan_id">
             <Value>=Parameters!taikhoan_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT Taikhoan_ud, taikhoan_nm FROM TaiKhoan
-WHERE Taikhoan_id = @taikhoan_id</CommandText>
+        <CommandText>SELECT Taikhoanud, taikhoannm FROM TaiKhoan
+WHERE id = @taikhoan_id</CommandText>
       </Query>
       <Fields>
-        <Field Name="Taikhoan_ud">
-          <DataField>Taikhoan_ud</DataField>
+        <Field Name="Taikhoanud">
+          <DataField>Taikhoanud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="taikhoan_nm">
-          <DataField>taikhoan_nm</DataField>
+        <Field Name="taikhoannm">
+          <DataField>taikhoannm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -271,8 +268,9 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox2</rd:DefaultName>
                 <Top>1.5249cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>0.87517cm</Height>
-                <Width>21.88645cm</Width>
+                <Width>19.84949cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -288,37 +286,37 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.2865cm</Width>
+                      <Width>2.09764cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.24825cm</Width>
+                      <Width>2.05939cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.19203cm</Width>
+                      <Width>0.8384cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.34381cm</Width>
+                      <Width>1.08235cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.47695cm</Width>
+                      <Width>0.93749cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.33202cm</Width>
+                      <Width>1.14316cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.73343cm</Width>
+                      <Width>2.54457cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.65906cm</Width>
+                      <Width>2.80887cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.76128cm</Width>
+                      <Width>2.82171cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.63292cm</Width>
+                      <Width>2.44406cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>1.26251cm</Width>
+                      <Width>1.07185cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -1623,10 +1621,12 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                     </TablixMember>
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <RepeatColumnHeaders>true</RepeatColumnHeaders>
                 <DataSetName>SoQuyTienMat</DataSetName>
                 <Top>4.14608cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>3.28515cm</Height>
-                <Width>21.92876cm</Width>
+                <Width>19.84949cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
                   <Border>
@@ -1647,7 +1647,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!Taikhoan_ud.Value, "TaiKhoan")</Value>
+                        <Value>=First(Fields!Taikhoanud.Value, "TaiKhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1659,7 +1659,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!taikhoan_nm.Value, "TaiKhoan")</Value>
+                        <Value>=First(Fields!taikhoannm.Value, "TaiKhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1672,8 +1672,9 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>2.47063cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>0.6cm</Height>
-                <Width>21.88645cm</Width>
+                <Width>19.84949cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -1725,58 +1726,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox12</rd:DefaultName>
                 <Top>3.17646cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>0.6cm</Height>
-                <Width>21.88645cm</Width>
+                <Width>19.84949cm</Width>
                 <ZIndex>3</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox2">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>Mẫu số S07 - DN</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontSize>9pt</FontSize>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>(Ban hành theo TT số 200 /2014/TT - BTC ngày 22/12/2014 của Bộ Tài  Chính)</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                          <FontSize>9pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Center</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox1</rd:DefaultName>
-                <Left>15.9375cm</Left>
-                <Height>1.30582cm</Height>
-                <Width>5.99124cm</Width>
-                <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1818,9 +1771,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox1</rd:DefaultName>
                 <Top>0.01962cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>1.09725cm</Height>
                 <Width>10.5076cm</Width>
-                <ZIndex>5</ZIndex>
+                <ZIndex>4</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1868,7 +1822,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=code.TotalPages</Value>
+                        <Value>=code.ToTalPages</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1881,9 +1835,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>7.60762cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>0.6cm</Height>
                 <Width>13.2458cm</Width>
-                <ZIndex>6</ZIndex>
+                <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1921,9 +1876,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>8.27818cm</Top>
+                <Left>0.0018cm</Left>
                 <Height>0.6cm</Height>
                 <Width>6.945cm</Width>
-                <ZIndex>7</ZIndex>
+                <ZIndex>6</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1969,10 +1925,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox31</rd:DefaultName>
                 <Top>9.78729cm</Top>
-                <Left>1.18298cm</Left>
+                <Left>0.59682cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>8</ZIndex>
+                <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2018,10 +1974,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox31</rd:DefaultName>
                 <Top>9.78729cm</Top>
-                <Left>9.44943cm</Left>
+                <Left>8.16023cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>9</ZIndex>
+                <ZIndex>8</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2067,10 +2023,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox31</rd:DefaultName>
                 <Top>9.78729cm</Top>
-                <Left>16.37021cm</Left>
+                <Left>15.00579cm</Left>
                 <Height>1.1715cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>10</ZIndex>
+                <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2108,10 +2064,10 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraphs>
                 <rd:DefaultName>Textbox11</rd:DefaultName>
                 <Top>9.01091cm</Top>
-                <Left>16.37021cm</Left>
+                <Left>15.00579cm</Left>
                 <Height>0.6cm</Height>
                 <Width>4.25754cm</Width>
-                <ZIndex>11</ZIndex>
+                <ZIndex>10</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2124,23 +2080,73 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
               </Textbox>
             </ReportItems>
             <Top>0.60579cm</Top>
-            <Left>0.61019cm</Left>
+            <Left>0.5cm</Left>
             <Height>13.49053cm</Height>
-            <Width>21.92876cm</Width>
+            <Width>19.85309cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Mẫu số S07 - DN</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>(Ban hành theo TT số 200 /2014/TT - BTC ngày 22/12/2014 của Bộ Tài  Chính)</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.60579cm</Top>
+            <Left>14.36005cm</Left>
+            <Height>1.30582cm</Height>
+            <Width>5.99124cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>5.54973in</Height>
         <Style />
       </Body>
-      <Width>9.175in</Width>
+      <Width>21cm</Width>
       <Page>
         <PageFooter>
-          <Height>1.0281cm</Height>
+          <Height>1.73366cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2169,8 +2175,8 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox54</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>18.56373cm</Left>
+              <Top>0.7173cm</Top>
+              <Left>16.37609cm</Left>
               <Height>0.6cm</Height>
               <Width>3.9752cm</Width>
               <Style>
@@ -2183,6 +2189,19 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Line Name="Line1">
+              <Top>0.42332cm</Top>
+              <Left>0.5cm</Left>
+              <Height>0cm</Height>
+              <Width>19.85309cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -2206,7 +2225,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>350</Value>
+          <Value>1</Value>
         </Values>
       </DefaultValue>
       <Prompt>taikhoan id</Prompt>

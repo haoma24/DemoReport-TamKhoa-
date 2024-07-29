@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-18T06:29:34.3803995Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-25T04:50:04.9680878Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1515,37 +1515,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Sổ này có </Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=code.ToTalPages</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value> trang , đánh số  </Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=code.PageNumber</Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value> từ đến </Value>
-                        <Style>
-                          <FontFamily>Times New Roman</FontFamily>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>=code.TotalPages</Value>
+                        <Value>Sổ này có  trang , đánh số   từ đến </Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1866,7 +1836,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
       <Width>9.32741in</Width>
       <Page>
         <PageFooter>
-          <Height>1.02358cm</Height>
+          <Height>1.48925cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1897,7 +1867,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.14111cm</Top>
+              <Top>0.62794cm</Top>
               <Left>18.53683cm</Left>
               <Height>0.6cm</Height>
               <Width>4.20597cm</Width>
@@ -1911,6 +1881,19 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
+            <Line Name="Line1">
+              <Top>0.17639cm</Top>
+              <Left>0.81406cm</Left>
+              <Height>0cm</Height>
+              <Width>21.92874cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+              </Style>
+            </Line>
           </ReportItems>
           <Style>
             <Border>
@@ -1984,14 +1967,26 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <Code>Function PageNumber() As String      
-    Return Me.Report.Globals!PageNumber      
+  <Code>Dim currentPage As Integer
+Dim totalPages As Integer
+
+Public Function GetPageNumber() As Integer
+    Return currentPage
 End Function
 
-Function TotalPages() As String     
-    Return Me.Report.Globals!TotalPages      
+Public Function SetPageNumber(ByVal pageNumber As Integer) As Integer
+    currentPage = pageNumber
+    Return currentPage
 End Function
-</Code>
+
+Public Function GetTotalPages() As Integer
+    Return totalPages
+End Function
+
+Public Function SetTotalPages(ByVal total As Integer) As Integer
+    totalPages = total
+    Return totalPages
+End Function</Code>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>86545b13-0b15-47c0-82b4-11c20c7672f6</rd:ReportID>
 </Report>

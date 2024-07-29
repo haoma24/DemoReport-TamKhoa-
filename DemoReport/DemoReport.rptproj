@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <DataSource Include="A0000000.rds" />
+    <DataSource Include="BoroWeb.rds" />
   </ItemGroup>
   <ItemGroup>
     <Report Include="BangKeHoaDonMuaHangVaDichVu.rdl" />
