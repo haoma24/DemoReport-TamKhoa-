@@ -55,7 +55,6 @@
   <ItemGroup>
     <Report Include="BangKeHoaDonMuaHangVaDichVu.rdl" />
     <Report Include="BangKePhieuNhap.rdl" />
-    <Report Include="BaoCaoDT.rdl" />
     <Report Include="BaoCaoHangNhapNhomTheo2ChiTiet.rdl" />
     <Report Include="DanhMucKhachHang.rdl" />
     <Report Include="DanhMucVatTu.rdl" />

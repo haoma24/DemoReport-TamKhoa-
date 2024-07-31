@@ -28,9 +28,7 @@ namespace ReportManagement.Controllers
                 _id = "1";
             string url = System.Configuration.ConfigurationManager.AppSettings["SSRSReportsUrl"].ToString();
             ReportViewer reportViewer = new ReportViewer();
-            reportViewer.ProcessingMode = ProcessingMode.Remote;
-            reportViewer.SizeToReportContent = true;
-            reportViewer.AsyncRendering = true;
+            reportViewer.ProcessingMode = ProcessingMode.Local;
             reportViewer.BackColor = System.Drawing.Color.White;
             reportViewer.ServerReport.ReportServerUrl = new Uri(url);
             reportViewer.ServerReport.ReportPath = "/DemoReport/PhieuThuTienMat";

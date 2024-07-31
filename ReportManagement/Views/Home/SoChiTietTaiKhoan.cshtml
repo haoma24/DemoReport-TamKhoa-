@@ -55,12 +55,26 @@
                     {
                         <tr>
                             <td class="e-ellipsis-100">@row["Mact"]</td>
-                            <td class="e-ellipsis-100">@row["Ngayct"]</td>
+                            @if (row["NgayCt"].ToString() != "")
+                            {
+                                <td class="e-ellipsis-100">@Convert.ToDateTime(row["NgayCt"].ToString()).ToString("dd/MM/yyyy")</td>
+                            }
+                            else
+                            {
+                                <td class="e-ellipsis-100"></td>
+                            }
                             <td class="e-ellipsis-100">@row["Soct"]</td>
-                            <td class="e-ellipsis-100">@row["Ngayhd"]</td>
+                            @if (row["NgayHd"].ToString() != "")
+                            {
+                                <td class="e-ellipsis-100">@Convert.ToDateTime(row["NgayHd"].ToString()).ToString("dd/MM/yyyy")</td>
+                            }
+                            else
+                            {
+                                <td class="e-ellipsis-100"></td>
+                            }
                             <td class="e-ellipsis-100">@row["Sohd"]</td>
-                            <td class="e-ellipsis-100">@row["Khachhang_ud"]</td>
-                            <td class="e-ellipsis-100">@row["Khachhang_nm"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhangud"]</td>
+                            <td class="e-ellipsis-100">@row["Khachhangnm"]</td>
                             @if (double.Parse(row["Nhom"].ToString()) != 4)
                             {
                                 <td class="e-ellipsis-100 fw-bold">@row["DienGiai"]</td>
@@ -70,14 +84,14 @@
                                 <td class="e-ellipsis-100">@row["DienGiai"]</td>
                             }
                             <td class="e-ellipsis-100">@row["TkDu"]</td>
-                            <td class="e-ellipsis-100">@row["TkDu_nm"]</td>
+                            <td class="e-ellipsis-100">@row["TkDunm"]</td>
                             @if (double.Parse(row["Psno"].ToString()) == 0)
                             {
                                 <td class="e-ellipsis-100"></td>
                             }
                             else
                             {
-                                <td class="e-ellipsis-100">@row["Psno"]</td>
+                                <td class="e-ellipsis-100">@string.Format("{0:0,0}", row["Psno"])</td>
                             }
                             @if (double.Parse(row["Psco"].ToString()) == 0)
                             {
@@ -85,20 +99,20 @@
                             }
                             else
                             {
-                                <td class="e-ellipsis-100">@row["Psco"]</td>
+                                <td class="e-ellipsis-100">@string.Format("{0:0,0}", row["Psco"])</td>
                             }
                             <td class="e-ellipsis-100">Nợ cuối</td>
                             <td class="e-ellipsis-100">Có cuối</td>
-                            <td class="e-ellipsis-100">@row["VuViec_ud"]</td>
-                            <td class="e-ellipsis-100">@row["VuViec_nm"]</td>
-                            <td class="e-ellipsis-100">@row["MaPhi_ud"]</td>
-                            <td class="e-ellipsis-100">@row["MaPhi_nm"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD01_ud"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD01_nm"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD02_ud"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD02_nm"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD03_ud"]</td>
-                            <td class="e-ellipsis-100">@row["MaTD03_nm"]</td>
+                            <td class="e-ellipsis-100">@row["VuViecud"]</td>
+                            <td class="e-ellipsis-100">@row["VuViecnm"]</td>
+                            <td class="e-ellipsis-100">@row["MaPhiud"]</td>
+                            <td class="e-ellipsis-100">@row["MaPhinm"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD01ud"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD01nm"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD02ud"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD02nm"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD03ud"]</td>
+                            <td class="e-ellipsis-100">@row["MaTD03nm"]</td>
                         </tr>
                     }
                 </tbody>

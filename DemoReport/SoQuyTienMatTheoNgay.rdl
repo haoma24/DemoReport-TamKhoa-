@@ -9,16 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-25T04:50:04.9680878Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-29T04:32:55.8551515Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A00000">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=192.168.1.3\TAMKHOAJSC;Initial Catalog=A0000000</ConnectString>
-      </ConnectionProperties>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>811e990d-cd64-4bd4-a467-db5bdf7d3d48</rd:DataSourceID>
     </DataSource>
@@ -26,7 +23,7 @@
   <DataSets>
     <DataSet Name="SoQuyTienMat">
       <Query>
-        <DataSourceName>A00000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@_taikhoan_id">
             <Value>=Parameters!taikhoan_id.Value</Value>
@@ -226,22 +223,22 @@
     </DataSet>
     <DataSet Name="Taikhoan">
       <Query>
-        <DataSourceName>A00000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@taikhoan_id">
             <Value>=Parameters!taikhoan_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT Taikhoan_ud, taikhoan_nm FROM TaiKhoan
-WHERE Taikhoan_id = @taikhoan_id</CommandText>
+        <CommandText>SELECT Taikhoanud, taikhoannm FROM TaiKhoan
+WHERE id = @taikhoan_id</CommandText>
       </Query>
       <Fields>
-        <Field Name="Taikhoan_ud">
-          <DataField>Taikhoan_ud</DataField>
+        <Field Name="Taikhoanud">
+          <DataField>Taikhoanud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="taikhoan_nm">
-          <DataField>taikhoan_nm</DataField>
+        <Field Name="taikhoannm">
+          <DataField>taikhoannm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -1371,7 +1368,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!Taikhoan_ud.Value, "Taikhoan")</Value>
+                        <Value>=First(Fields!Taikhoanud.Value, "Taikhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -1383,7 +1380,7 @@ WHERE Taikhoan_id = @taikhoan_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!taikhoan_nm.Value, "Taikhoan")</Value>
+                        <Value>=First(Fields!taikhoannm.Value, "Taikhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>

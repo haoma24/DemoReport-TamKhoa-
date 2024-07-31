@@ -9,13 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-23T03:34:28.0196160Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T01:42:33.5261546Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A0000000">
-      <DataSourceReference>A0000000</DataSourceReference>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>5e9e49a2-b97f-4a19-a832-8eee7901f540</rd:DataSourceID>
     </DataSource>
@@ -23,7 +23,7 @@
   <DataSets>
     <DataSet Name="SoNhatKyMuaHang">
       <Query>
-        <DataSourceName>A0000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@TuNgay">
             <Value>=Parameters!TuNgay.Value</Value>

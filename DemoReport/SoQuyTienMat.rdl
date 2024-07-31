@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-29T01:40:47.3201783Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T07:56:15.3345497Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -253,7 +253,8 @@ WHERE id = @taikhoan_id</CommandText>
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>SỔ QUỸ TIỀN MẶT</Value>
+                        <Value>=IIF(First(Fields!Taikhoanud.Value, "TaiKhoan")=111,"SỔ QUỸ TIỀN MẶT",
+"SỔ TIỀN GỬI NGÂN HÀNG")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                           <FontSize>20pt</FontSize>
@@ -2078,6 +2079,72 @@ WHERE id = @taikhoan_id</CommandText>
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
+              <Textbox Name="Textbox2">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Mẫu số </Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=iif(First(Fields!Taikhoanud.Value, "TaiKhoan")=111,"S07", "S08")</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> - DN</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>9pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>(Ban hành theo TT số 200 /2014/TT - BTC ngày 22/12/2014 của Bộ Tài  Chính)</Value>
+                        <Style>
+                          <FontFamily>Times New Roman</FontFamily>
+                          <FontSize>9pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <Top>0.01962cm</Top>
+                <Left>13.86005cm</Left>
+                <Height>1.30582cm</Height>
+                <Width>5.99124cm</Width>
+                <ZIndex>11</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
             </ReportItems>
             <Top>0.60579cm</Top>
             <Left>0.5cm</Left>
@@ -2089,56 +2156,6 @@ WHERE id = @taikhoan_id</CommandText>
               </Border>
             </Style>
           </Rectangle>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Mẫu số S07 - DN</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>(Ban hành theo TT số 200 /2014/TT - BTC ngày 22/12/2014 của Bộ Tài  Chính)</Value>
-                    <Style>
-                      <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.60579cm</Top>
-            <Left>14.36005cm</Left>
-            <Height>1.30582cm</Height>
-            <Width>5.99124cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
         <Height>5.54973in</Height>
         <Style />
@@ -2175,7 +2192,7 @@ WHERE id = @taikhoan_id</CommandText>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox54</rd:DefaultName>
-              <Top>0.7173cm</Top>
+              <Top>0.71728cm</Top>
               <Left>16.37609cm</Left>
               <Height>0.6cm</Height>
               <Width>3.9752cm</Width>
@@ -2190,7 +2207,7 @@ WHERE id = @taikhoan_id</CommandText>
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>0.42332cm</Top>
+              <Top>0.4233cm</Top>
               <Left>0.5cm</Left>
               <Height>0cm</Height>
               <Width>19.85309cm</Width>

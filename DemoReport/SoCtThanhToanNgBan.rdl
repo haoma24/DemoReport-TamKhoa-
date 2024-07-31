@@ -9,13 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-25T07:51:02.7662237Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T01:32:02.4642237Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A000000">
-      <DataSourceReference>A0000000</DataSourceReference>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>611cdcc5-e633-41a4-bd42-095cfe247e4b</rd:DataSourceID>
     </DataSource>
@@ -23,7 +23,7 @@
   <DataSets>
     <DataSet Name="SoThanhToanNgBan">
       <Query>
-        <DataSourceName>A000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@TuNgay">
             <Value>=Parameters!TuNgay.Value</Value>
@@ -94,44 +94,44 @@
     </DataSet>
     <DataSet Name="TaiKhoan">
       <Query>
-        <DataSourceName>A000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@TaiKhoan_id">
             <Value>=Parameters!TaiKhoan_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT Taikhoan_ud, taikhoan_nm FROM TaiKhoan
-WHERE Taikhoan_id = @TaiKhoan_id</CommandText>
+        <CommandText>SELECT Taikhoanud, taikhoannm FROM TaiKhoan
+WHERE id = @TaiKhoan_id</CommandText>
       </Query>
       <Fields>
-        <Field Name="Taikhoan_ud">
-          <DataField>Taikhoan_ud</DataField>
+        <Field Name="Taikhoanud">
+          <DataField>Taikhoanud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="taikhoan_nm">
-          <DataField>taikhoan_nm</DataField>
+        <Field Name="taikhoannm">
+          <DataField>taikhoannm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
     <DataSet Name="khachhang">
       <Query>
-        <DataSourceName>A000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@KhachHang_id">
             <Value>=Parameters!KhachHang_id.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT khachhang_ud, khachhang_nm
-FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
+        <CommandText>SELECT khachhangud, khachhangnm
+FROM khachhang where id = @KhachHang_id</CommandText>
       </Query>
       <Fields>
-        <Field Name="khachhang_ud">
-          <DataField>khachhang_ud</DataField>
+        <Field Name="khachhangud">
+          <DataField>khachhangud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="khachhang_nm">
-          <DataField>khachhang_nm</DataField>
+        <Field Name="khachhangnm">
+          <DataField>khachhangnm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -290,7 +290,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!Taikhoan_ud.Value, "TaiKhoan")</Value>
+                        <Value>=First(Fields!Taikhoanud.Value, "TaiKhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -302,7 +302,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!taikhoan_nm.Value, "TaiKhoan")</Value>
+                        <Value>=First(Fields!taikhoannm.Value, "TaiKhoan")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -342,7 +342,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!khachhang_ud.Value, "khachhang")</Value>
+                        <Value>=First(Fields!khachhangud.Value, "khachhang")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>
@@ -354,7 +354,7 @@ FROM khachhang where khachhang_id = @KhachHang_id</CommandText>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>=First(Fields!khachhang_nm.Value, "khachhang")</Value>
+                        <Value>=First(Fields!khachhangnm.Value, "khachhang")</Value>
                         <Style>
                           <FontFamily>Times New Roman</FontFamily>
                         </Style>

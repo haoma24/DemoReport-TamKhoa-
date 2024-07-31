@@ -9,16 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-22T06:49:04.1745647Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T02:59:57.1754782Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A0000000">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=192.168.1.3\TAMKHOAJSC;Initial Catalog=A0000000</ConnectString>
-      </ConnectionProperties>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>a3da7841-7095-4282-8a52-2eb99a529c35</rd:DataSourceID>
     </DataSource>
@@ -26,7 +23,7 @@
   <DataSets>
     <DataSet Name="BangKePhieuNhap">
       <Query>
-        <DataSourceName>A0000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@TuNgay">
             <Value>=Parameters!TuNgay.Value</Value>
@@ -53,7 +50,7 @@
         </Field>
         <Field Name="SoHd">
           <DataField>SoHd</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="NgayHd">
           <DataField>NgayHd</DataField>
@@ -64,11 +61,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="KhachHang_ud">
-          <DataField>KhachHang_ud</DataField>
+          <DataField>KhachHangud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="KhachHang_nm">
-          <DataField>KhachHang_nm</DataField>
+          <DataField>KhachHangnm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="KhachHang_nm2">
@@ -76,11 +73,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Kho_ud">
-          <DataField>Kho_ud</DataField>
+          <DataField>Khoud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Kho_nm">
-          <DataField>Kho_nm</DataField>
+          <DataField>Khonm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Kho_nm2">
@@ -92,11 +89,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TaiKhoan_ud">
-          <DataField>TaiKhoan_ud</DataField>
+          <DataField>TaiKhoanud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TaiKhoan_nm">
-          <DataField>TaiKhoan_nm</DataField>
+          <DataField>TaiKhoannm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TaiKhoan_nm2">
@@ -104,11 +101,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VatTu_ud">
-          <DataField>VatTu_ud</DataField>
+          <DataField>VatTuud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VatTu_nm">
-          <DataField>VatTu_nm</DataField>
+          <DataField>VatTunm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VatTu_nm2">
@@ -120,11 +117,11 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VuViec_ud">
-          <DataField>VuViec_ud</DataField>
+          <DataField>VuViecud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VuViec_nm">
-          <DataField>VuViec_nm</DataField>
+          <DataField>VuViecnm</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="VuViec_nm2">
@@ -208,7 +205,7 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="NgoaiTe_ud">
-          <DataField>NgoaiTe_ud</DataField>
+          <DataField>NgoaiTeud</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Phieu_id">
@@ -237,7 +234,7 @@
         </Field>
         <Field Name="SoSeri0">
           <DataField>SoSeri0</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -391,25 +388,25 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.40778cm</Width>
+                      <Width>2.53995cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.36482cm</Width>
+                      <Width>2.49699cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>3.93266cm</Width>
+                      <Width>4.06483cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.12866cm</Width>
+                      <Width>2.26083cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.66364cm</Width>
+                      <Width>2.79581cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.66364cm</Width>
+                      <Width>2.79581cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.66364cm</Width>
+                      <Width>2.79581cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -1519,7 +1516,7 @@
                 </PageBreak>
                 <Top>3.67751cm</Top>
                 <Height>4.5119cm</Height>
-                <Width>18.82484cm</Width>
+                <Width>19.75cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
                   <Border>
@@ -1769,7 +1766,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>4</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>

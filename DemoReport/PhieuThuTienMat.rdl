@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-25T01:39:24.9451580Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T06:55:02.7704079Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -1301,7 +1301,7 @@ WHERE PhieuThuId = @PhieuThuId</CommandText>
             <Top>3.25003cm</Top>
             <Left>15.80098cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.49128cm</Width>
+            <Width>4.49129cm</Width>
             <ZIndex>27</ZIndex>
             <Style>
               <Border>
@@ -1384,9 +1384,10 @@ WHERE PhieuThuId = @PhieuThuId</CommandText>
       <Page>
         <PageHeight>14.8cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>0cm</LeftMargin>
-        <RightMargin>0cm</RightMargin>
-        <BottomMargin>0cm</BottomMargin>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

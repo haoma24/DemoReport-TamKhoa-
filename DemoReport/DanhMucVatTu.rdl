@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-25T04:34:09.2965739Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T01:37:07.7824408Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -733,7 +733,7 @@ FROM VatTu</CommandText>
             <Top>2.73133cm</Top>
             <Left>0.58677cm</Left>
             <Height>2.30066cm</Height>
-            <Width>19.48668cm</Width>
+            <Width>19.4867cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>

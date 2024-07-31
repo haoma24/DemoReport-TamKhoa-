@@ -9,16 +9,13 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.8.34330.188</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2024-07-25T04:36:30.0093099Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2024-07-30T02:01:59.0342097Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="A000000">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=192.168.1.3\TAMKHOAJSC;Initial Catalog=A0000000</ConnectString>
-      </ConnectionProperties>
+    <DataSource Name="BoroWeb">
+      <DataSourceReference>BoroWeb</DataSourceReference>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>e0ec91d9-6853-417e-a072-0c2fa3572ea7</rd:DataSourceID>
     </DataSource>
@@ -26,7 +23,7 @@
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>A000000</DataSourceName>
+        <DataSourceName>BoroWeb</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@loaibc">
             <Value>=Parameters!LoaiBC.Value</Value>

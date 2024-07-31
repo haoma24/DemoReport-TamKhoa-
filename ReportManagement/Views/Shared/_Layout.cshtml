@@ -40,7 +40,7 @@
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
-        
+
 
     </script>
 </head>
@@ -74,7 +74,7 @@
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion" id="sidenavAccordion">
-                <div class="sb-sidenav-menu e-bg-light ">
+                <div class="sb-sidenav-menu e-bg-light border-end border-dark">
                     <div class="nav">
                         <!-- QuanLyTien-begin -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -272,6 +272,9 @@
     @*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>*@
     <script src="~/Scripts/scripts.js"></script>
     <script>
+        $("#ID").click(function () {
+            $('input:checkbox').not(this).prop('checked', this.checked);
+        });
         // Function to set active link
         function setActiveLink(id) {
             // Remove active class from all links
@@ -289,10 +292,11 @@
         // Add event listeners to all links
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function (event) {
-                event.preventDefault();
-                setActiveLink(this.id);
                 // Navigate to the URL
                 window.location.href = this.href;
+                event.preventDefault();
+                setActiveLink(this.id);
+                
             });
         });
 
@@ -303,6 +307,7 @@
                 setActiveLink(activeLinkId);
             }
         });
+        
     </script>
 </body>
 </html>

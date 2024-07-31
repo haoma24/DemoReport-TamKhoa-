@@ -314,7 +314,7 @@ namespace ReportManagement.Controllers
             parameters[2] = new ReportParameter("LoaiBC", "4", true);
             reportViewer.ServerReport.SetParameters(parameters);
             ViewBag.ReportViewer = reportViewer;
-            ViewBag.ViewName = "BangKeHDDV";
+            ViewBag.ViewName = "HangNhapNhom2CT";
             return View("~/Views/Report/Index.cshtml");
         }
         //BCSNKMH
@@ -451,7 +451,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.TaiKhoanUd,
+                    Value = item.Id.ToString(),
                     Text = item.TaiKhoanUd
                 };
                 listTaiKhoan.Add(listItem);
@@ -474,7 +474,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.TaiKhoanUd,
+                    Value = item.Id.ToString(),
                     Text = item.TaiKhoanUd
                 };
                 listTaiKhoan.Add(listItem);
@@ -488,7 +488,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.KhachHangUd,
+                    Value = item.Id.ToString(),
                     Text = item.KhachHangUd
                 };
                 listKhachHang.Add(listItem);
@@ -513,7 +513,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.TaiKhoanUd,
+                    Value = item.Id.ToString(),
                     Text = item.TaiKhoanUd
                 };
                 listTaiKhoan.Add(listItem);
@@ -527,7 +527,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.KhachHangUd,
+                    Value = item.Id.ToString(),
                     Text = item.KhachHangUd
                 };
                 listKhachHang.Add(listItem);
@@ -541,7 +541,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.ChiNhanhUd,
+                    Value = item.Id.ToString(),
                     Text = item.ChiNhanhUd
                 };
                 listChiNhanh.Add(listItem);
@@ -564,7 +564,7 @@ namespace ReportManagement.Controllers
             {
                 SelectListItem listItem = new SelectListItem()
                 {
-                    Value = item.TaiKhoanUd,
+                    Value = item.Id.ToString(),
                     Text = item.TaiKhoanUd
                 };
                 listTaiKhoan.Add(listItem);
@@ -729,19 +729,14 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
+            string taikhoanid = "1";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
-                taikhoanud = int.Parse(taiKhoan.Id);
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                taikhoanid = taiKhoan.Id;
                 ViewBag.taikhoanid = taikhoanid;
-                ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -751,7 +746,7 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["TaiKhoanId"];
+                taikhoanid = (string)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
@@ -769,7 +764,7 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec SoQuyTienMatTheoNgay @_taikhoan_id = "+taikhoanid+", @_tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @_denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -778,19 +773,16 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
+            
+            string taikhoanid = "1";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
-                taikhoanud = int.Parse(taiKhoan.Id);
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                taikhoanid = taiKhoan.Id;
                 ViewBag.taikhoanid = taikhoanid;
-                ViewBag.taiKhoanUd = taikhoanud;
+              
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -800,7 +792,7 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["TaiKhoanId"];
+                taikhoanid = (string)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
@@ -818,7 +810,7 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec SoQuyTienMat @taikhoan_id = "+taikhoanid+", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -827,27 +819,17 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
-            int khid = 1549;
-            string khud = "BORO";
+            string taikhoanid = "";
+            string khid = "";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
-                taikhoanud = int.Parse(model.TaiKhoanModel.Id);
-                khud = model.KHachHangModel.Id;
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
-                string sql2 = "select khachhang_id from KhachHang where KhachHang_ud = '" + khud + "'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
-                DataTable tempdt2 = knA00.ExecuteQuery(sql2, null);
-                khid = tempdt2.Rows[0].Field<int>(0);
+                taikhoanid = model.TaiKhoanModel.Id;
+                khid = model.KHachHangModel.Id;
                 ViewBag.khid = khid;
-                ViewBag.khud = khud;
                 ViewBag.taikhoanid = taikhoanid;
-                ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -857,7 +839,7 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["TaiKhoanId"];
+                taikhoanid = (string)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.khid = khid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
@@ -876,8 +858,8 @@ namespace ReportManagement.Controllers
             Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
-            string sqlQuery = "exec SoQuyTienMat @taikhoan_id = " + taikhoanid + ", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            string sqlQuery = "exec BangDoiChieuCongNo @khachhang_id='"+khid+"', @taikhoan_id = " + taikhoanid + ", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -886,31 +868,19 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
-            int khid = 1549;
-            string khud = "BORO";
+            string taikhoanid = "2";
+            string khid = "2";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy", null);
-                taikhoanud = int.Parse(model.TaiKhoanModel.Id);
-                khud = model.KHachHangModel.Id;
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
-                string sql2 = "select khachhang_id from KhachHang where KhachHang_ud = '" + khud + "'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
-                DataTable tempdt2 = knA00.ExecuteQuery(sql2, null);
-                if (tempdt2.Rows.Count > 0)
-                {
-                    khid = tempdt2.Rows[0].Field<int>(0);
-                }
-                else khid = 1550;
+
+                taikhoanid = model.TaiKhoanModel.Id;
+                khid = model.KHachHangModel.Id;
+               
                 ViewBag.khid = khid;
-                ViewBag.khud = khud;
                 ViewBag.taikhoanid = taikhoanid;
-                ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -920,7 +890,7 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["TaiKhoanId"];
+                taikhoanid = (string)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.khid = khid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
@@ -940,7 +910,7 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec SoCtThanhToanNgBan @khachhang_id = '"+khid+"', @taikhoan_id = " + taikhoanid + ", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View(); 
         }
@@ -978,7 +948,7 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec BangKePhieuNhapPreview @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -1050,7 +1020,7 @@ namespace ReportManagement.Controllers
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec BaoCaoHangNhapNhomCtPreview @LoaiBC=4, @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -1098,7 +1068,7 @@ namespace ReportManagement.Controllers
             Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
             string sqlQuery = "exec SoNhatKyMuaHangPreview @TuNgay= '" + fromDate.ToString("MM/dd/yyyy") + "', @DenNgay='" + toDate.ToString("MM/dd/yyyy") + "', @TkNo= '"+tkNo_id+"', @TkCo = '"+tkCo_id+"'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -1107,19 +1077,19 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
+            string taikhoanud = "111";
+            string taikhoanid = "1";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
-                taikhoanud = int.Parse(taiKhoan.Id);
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '"+taikhoanud+"'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                taikhoanid = taiKhoan.Id;
+                string sql = "select taikhoanud from TaiKhoan where id = '"+taikhoanid+"'";
+                DataTable tempdt = knBoroWeb.ExecuteQuery(sql, null);
+                taikhoanud = tempdt.Rows[0].Field<string>(0);
                 ViewBag.taikhoanid = taikhoanid;
-                ViewBag.taiKhoanUd = taikhoanud;
+                ViewBag.taikhoanud = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
                 goto kt;
@@ -1129,7 +1099,8 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["TaiKhoanId"];
+                taikhoanid = (string)Session["TaiKhoanId"];
+                taikhoanud = (string)Session["TaiKhoanId"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
@@ -1143,11 +1114,12 @@ namespace ReportManagement.Controllers
             }
 
         kt: Session["TaiKhoanId"] = taikhoanid;
+            Session["TaiKhoanUd"] = taikhoanud;
             Session["fromDate"] = fromDate.ToString("dd/MM/yyyy");
             Session["toDate"] = toDate.ToString("dd/MM/yyyy");
 
             string sqlQuery = "exec SoQuyTienMat @taikhoan_id = "+taikhoanid+", @tungay= '" + fromDate.ToString("MM/dd/yyyy") + "', @denngay='" + toDate.ToString("MM/dd/yyyy") + "'";
-            DataTable dt = knA00.ExecuteQuery(sqlQuery, null);
+            DataTable dt = knBoroWeb.ExecuteQuery(sqlQuery, null);
             ViewBag.Datatable = dt;
             return View();
         }
@@ -1156,17 +1128,17 @@ namespace ReportManagement.Controllers
         {
             DateTime fromDate = DateTime.Now;
             DateTime toDate = DateTime.Now;
-            int taikhoanud = 111;
-            int taikhoanid = 350;
+            string taikhoanud = "";
+            string taikhoanid = "1";
             if (form["fromDate"] != null || form["toDate"] != null)
             {
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact(form["fromDate"], "dd/MM/yyyy",null);
                 toDate = DateTime.ParseExact(form["toDate"], "dd/MM/yyyy",null);
-                taikhoanud = int.Parse(taiKhoan.Id);
-                string sql = "select taikhoan_id from TaiKhoan where TaiKhoan_ud = '" + taikhoanud + "'";
-                DataTable tempdt = knA00.ExecuteQuery(sql, null);
-                taikhoanid = tempdt.Rows[0].Field<int>(0);
+                taikhoanid = taiKhoan.Id;
+                string sql = "select taikhoanud from TaiKhoan where Id = '" + taikhoanid + "'";
+                DataTable tempdt = knBoroWeb.ExecuteQuery(sql, null);
+                taikhoanud = tempdt.Rows[0].Field<string>(0);
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.taiKhoanUd = taikhoanud;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
@@ -1178,8 +1150,8 @@ namespace ReportManagement.Controllers
                 //Sau khi chon ngay bao cao
                 fromDate = DateTime.ParseExact((string)Session["fromDate"], "dd/MM/yyyy", null);
                 toDate = DateTime.ParseExact((string)Session["toDate"], "dd/MM/yyyy", null);
-                taikhoanid = (int)Session["taikhoanid"];
-                taikhoanud = (int)Session["taikhoanud"];
+                taikhoanid = (string)Session["taikhoanid"];
+                taikhoanud = (string)Session["taikhoanud"];
                 ViewBag.taikhoanid = taikhoanid;
                 ViewBag.fromDate = fromDate.ToString("dd/MM/yyyy");
                 ViewBag.toDate = toDate.ToString("dd/MM/yyyy");
@@ -1202,7 +1174,7 @@ namespace ReportManagement.Controllers
             ViewBag.Datatable = dt;
             return View();
         }
-        //oTHHNM
+        //THHNM
         public ActionResult TongHopHangNhapMua(FormCollection form)
         {
             DateTime fromDate = DateTime.Now;
@@ -1274,7 +1246,7 @@ namespace ReportManagement.Controllers
         }
         public JsonResult GetKHName(string id)
         {
-            var item = db.KhachHang.FirstOrDefault(i => i.KhachHangUd == id);
+            var item = db.KhachHang.FirstOrDefault(i => i.Id.ToString() == id);
             if (item != null)
             {
                 return Json(new { name = item.KhachHangNm }, JsonRequestBehavior.AllowGet);
@@ -1283,7 +1255,7 @@ namespace ReportManagement.Controllers
         }
         public JsonResult GetCNName(string id)
         {
-            var item = db.ChiNhanh.FirstOrDefault(i => i.ChiNhanhUd == id);
+            var item = db.ChiNhanh.FirstOrDefault(i => i.Id.ToString() == id);
             if (item != null)
             {
                 return Json(new { name = item.ChiNhanhNm }, JsonRequestBehavior.AllowGet);
@@ -1378,6 +1350,7 @@ namespace ReportManagement.Controllers
             return View(vt.Take(10).ToList());
         }
         //VIEW DANH SACH - END
+        //Ham chuyen chuoi TkUd ngan cach boi dau phay thanh chuoi TkId
         public string dsTkId(string Tk_ud)
         {
             string Tk_id = "";
